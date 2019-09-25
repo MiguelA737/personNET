@@ -1,0 +1,1119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PersonNETModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Assoc_Core_Content">
+          <Key>
+            <PropertyRef Name="IdAssoc" />
+          </Key>
+          <Property Name="IdAssoc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCore" Type="int" Nullable="false" />
+          <Property Name="IdContent" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Content_Access_Denial">
+          <Key>
+            <PropertyRef Name="IdAccessDenial" />
+          </Key>
+          <Property Name="IdAccessDenial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="IdContent" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Core_Access_Denial">
+          <Key>
+            <PropertyRef Name="IdAccessDenial" />
+          </Key>
+          <Property Name="IdAccessDenial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="IdCore" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_AdditionalData">
+          <Key>
+            <PropertyRef Name="IdAdditionalData" />
+          </Key>
+          <Property Name="IdAdditionalData" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DataType" Type="varchar" MaxLength="32" />
+          <Property Name="DataContent" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="TB_Admin">
+          <Key>
+            <PropertyRef Name="IdAdmin" />
+          </Key>
+          <Property Name="IdAdmin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="E_mail" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="Pass" Type="varchar" MaxLength="512" Nullable="false" />
+          <Property Name="CurrentStatus" Type="varchar" MaxLength="16" />
+          <Property Name="LastAccess" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TB_AdminNotification">
+          <Key>
+            <PropertyRef Name="IdNotification" />
+          </Key>
+          <Property Name="IdNotification" Type="int" Nullable="false" />
+          <Property Name="IdAdmin" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Content">
+          <Key>
+            <PropertyRef Name="IdContent" />
+          </Key>
+          <Property Name="IdContent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContentType" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="UploadDate" Type="datetime" Nullable="false" />
+          <Property Name="ContentViews" Type="int" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Core">
+          <Key>
+            <PropertyRef Name="IdCore" />
+          </Key>
+          <Property Name="IdCore" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="512" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_CoreAdditionalData">
+          <Key>
+            <PropertyRef Name="IdAdditionalData" />
+          </Key>
+          <Property Name="IdAdditionalData" Type="int" Nullable="false" />
+          <Property Name="IdCore" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Genre">
+          <Key>
+            <PropertyRef Name="IdGenre" />
+          </Key>
+          <Property Name="IdGenre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCore" Type="int" Nullable="false" />
+          <Property Name="GenreContent" Type="varchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="TB_Keyword">
+          <Key>
+            <PropertyRef Name="IdKeyword" />
+          </Key>
+          <Property Name="IdKeyword" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCore" Type="int" Nullable="false" />
+          <Property Name="KeywordContent" Type="varchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="TB_Notification">
+          <Key>
+            <PropertyRef Name="IdNotification" />
+          </Key>
+          <Property Name="IdNotification" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Content" Type="varchar" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="TB_Photo">
+          <Key>
+            <PropertyRef Name="IdContent" />
+          </Key>
+          <Property Name="IdContent" Type="int" Nullable="false" />
+          <Property Name="DirPhoto" Type="varchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Text">
+          <Key>
+            <PropertyRef Name="IdContent" />
+          </Key>
+          <Property Name="IdContent" Type="int" Nullable="false" />
+          <Property Name="ContentText" Type="varchar" MaxLength="1024" />
+        </EntityType>
+        <EntityType Name="TB_User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="E_mail" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="Pass" Type="varchar" MaxLength="512" Nullable="false" />
+          <Property Name="DirProfilePhoto" Type="varchar" MaxLength="64" />
+          <Property Name="BirthDate" Type="date" Nullable="false" />
+          <Property Name="LastAccess" Type="datetime" />
+          <Property Name="HasPremiumAccess" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_UserAdditionalData">
+          <Key>
+            <PropertyRef Name="IdAdditionalData" />
+          </Key>
+          <Property Name="IdAdditionalData" Type="int" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_UserNotification">
+          <Key>
+            <PropertyRef Name="IdNotification" />
+          </Key>
+          <Property Name="IdNotification" Type="int" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Video">
+          <Key>
+            <PropertyRef Name="IdContent" />
+          </Key>
+          <Property Name="IdContent" Type="int" Nullable="false" />
+          <Property Name="DirVideo" Type="varchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Assoc_Cor__IdCon__30F848ED">
+          <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
+          <End Role="Assoc_Core_Content" Type="Self.Assoc_Core_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Content">
+              <PropertyRef Name="IdContent" />
+            </Principal>
+            <Dependent Role="Assoc_Core_Content">
+              <PropertyRef Name="IdContent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Assoc_Cor__IdCor__300424B4">
+          <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
+          <End Role="Assoc_Core_Content" Type="Self.Assoc_Core_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Core">
+              <PropertyRef Name="IdCore" />
+            </Principal>
+            <Dependent Role="Assoc_Core_Content">
+              <PropertyRef Name="IdCore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Content_A__IdCon__1ED998B2">
+          <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
+          <End Role="Content_Access_Denial" Type="Self.Content_Access_Denial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Content">
+              <PropertyRef Name="IdContent" />
+            </Principal>
+            <Dependent Role="Content_Access_Denial">
+              <PropertyRef Name="IdContent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Content_A__IdUse__1DE57479">
+          <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
+          <End Role="Content_Access_Denial" Type="Self.Content_Access_Denial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="Content_Access_Denial">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Core_Acce__IdCor__34C8D9D1">
+          <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
+          <End Role="Core_Access_Denial" Type="Self.Core_Access_Denial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Core">
+              <PropertyRef Name="IdCore" />
+            </Principal>
+            <Dependent Role="Core_Access_Denial">
+              <PropertyRef Name="IdCore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Core_Acce__IdUse__33D4B598">
+          <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
+          <End Role="Core_Access_Denial" Type="Self.Core_Access_Denial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="Core_Access_Denial">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_AdminN__IdAdm__2A4B4B5E">
+          <End Role="TB_Admin" Type="Self.TB_Admin" Multiplicity="1" />
+          <End Role="TB_AdminNotification" Type="Self.TB_AdminNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Admin">
+              <PropertyRef Name="IdAdmin" />
+            </Principal>
+            <Dependent Role="TB_AdminNotification">
+              <PropertyRef Name="IdAdmin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_AdminN__IdNot__29572725">
+          <End Role="TB_Notification" Type="Self.TB_Notification" Multiplicity="1" />
+          <End Role="TB_AdminNotification" Type="Self.TB_AdminNotification" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Notification">
+              <PropertyRef Name="IdNotification" />
+            </Principal>
+            <Dependent Role="TB_AdminNotification">
+              <PropertyRef Name="IdNotification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Conten__IdUse__1273C1CD">
+          <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
+          <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="TB_Content">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Core__IdUser__2D27B809">
+          <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
+          <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="TB_Core">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_CoreAd__IdAdd__3D5E1FD2">
+          <End Role="TB_AdditionalData" Type="Self.TB_AdditionalData" Multiplicity="1" />
+          <End Role="TB_CoreAdditionalData" Type="Self.TB_CoreAdditionalData" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_AdditionalData">
+              <PropertyRef Name="IdAdditionalData" />
+            </Principal>
+            <Dependent Role="TB_CoreAdditionalData">
+              <PropertyRef Name="IdAdditionalData" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_CoreAd__IdCor__3E52440B">
+          <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
+          <End Role="TB_CoreAdditionalData" Type="Self.TB_CoreAdditionalData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Core">
+              <PropertyRef Name="IdCore" />
+            </Principal>
+            <Dependent Role="TB_CoreAdditionalData">
+              <PropertyRef Name="IdCore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Genre__IdCore__440B1D61">
+          <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
+          <End Role="TB_Genre" Type="Self.TB_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Core">
+              <PropertyRef Name="IdCore" />
+            </Principal>
+            <Dependent Role="TB_Genre">
+              <PropertyRef Name="IdCore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Keywor__IdCor__412EB0B6">
+          <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
+          <End Role="TB_Keyword" Type="Self.TB_Keyword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Core">
+              <PropertyRef Name="IdCore" />
+            </Principal>
+            <Dependent Role="TB_Keyword">
+              <PropertyRef Name="IdCore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Photo__IdCont__182C9B23">
+          <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
+          <End Role="TB_Photo" Type="Self.TB_Photo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Content">
+              <PropertyRef Name="IdContent" />
+            </Principal>
+            <Dependent Role="TB_Photo">
+              <PropertyRef Name="IdContent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Text__IdConte__15502E78">
+          <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
+          <End Role="TB_Text" Type="Self.TB_Text" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Content">
+              <PropertyRef Name="IdContent" />
+            </Principal>
+            <Dependent Role="TB_Text">
+              <PropertyRef Name="IdContent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_UserAd__IdAdd__398D8EEE">
+          <End Role="TB_AdditionalData" Type="Self.TB_AdditionalData" Multiplicity="1" />
+          <End Role="TB_UserAdditionalData" Type="Self.TB_UserAdditionalData" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_AdditionalData">
+              <PropertyRef Name="IdAdditionalData" />
+            </Principal>
+            <Dependent Role="TB_UserAdditionalData">
+              <PropertyRef Name="IdAdditionalData" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_UserAd__IdUse__3A81B327">
+          <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
+          <End Role="TB_UserAdditionalData" Type="Self.TB_UserAdditionalData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="TB_UserAdditionalData">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_UserNo__IdNot__25869641">
+          <End Role="TB_Notification" Type="Self.TB_Notification" Multiplicity="1" />
+          <End Role="TB_UserNotification" Type="Self.TB_UserNotification" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Notification">
+              <PropertyRef Name="IdNotification" />
+            </Principal>
+            <Dependent Role="TB_UserNotification">
+              <PropertyRef Name="IdNotification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_UserNo__IdUse__267ABA7A">
+          <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
+          <End Role="TB_UserNotification" Type="Self.TB_UserNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="TB_UserNotification">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Video__IdCont__1B0907CE">
+          <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
+          <End Role="TB_Video" Type="Self.TB_Video" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Content">
+              <PropertyRef Name="IdContent" />
+            </Principal>
+            <Dependent Role="TB_Video">
+              <PropertyRef Name="IdContent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PersonNETModelStoreContainer">
+          <EntitySet Name="Assoc_Core_Content" EntityType="Self.Assoc_Core_Content" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Content_Access_Denial" EntityType="Self.Content_Access_Denial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Core_Access_Denial" EntityType="Self.Core_Access_Denial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_AdditionalData" EntityType="Self.TB_AdditionalData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Admin" EntityType="Self.TB_Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_AdminNotification" EntityType="Self.TB_AdminNotification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Content" EntityType="Self.TB_Content" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Core" EntityType="Self.TB_Core" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_CoreAdditionalData" EntityType="Self.TB_CoreAdditionalData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Genre" EntityType="Self.TB_Genre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Keyword" EntityType="Self.TB_Keyword" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Notification" EntityType="Self.TB_Notification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Photo" EntityType="Self.TB_Photo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Text" EntityType="Self.TB_Text" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_User" EntityType="Self.TB_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_UserAdditionalData" EntityType="Self.TB_UserAdditionalData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_UserNotification" EntityType="Self.TB_UserNotification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Video" EntityType="Self.TB_Video" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Assoc_Cor__IdCon__30F848ED" Association="Self.FK__Assoc_Cor__IdCon__30F848ED">
+            <End Role="TB_Content" EntitySet="TB_Content" />
+            <End Role="Assoc_Core_Content" EntitySet="Assoc_Core_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Assoc_Cor__IdCor__300424B4" Association="Self.FK__Assoc_Cor__IdCor__300424B4">
+            <End Role="TB_Core" EntitySet="TB_Core" />
+            <End Role="Assoc_Core_Content" EntitySet="Assoc_Core_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Content_A__IdCon__1ED998B2" Association="Self.FK__Content_A__IdCon__1ED998B2">
+            <End Role="TB_Content" EntitySet="TB_Content" />
+            <End Role="Content_Access_Denial" EntitySet="Content_Access_Denial" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Content_A__IdUse__1DE57479" Association="Self.FK__Content_A__IdUse__1DE57479">
+            <End Role="TB_User" EntitySet="TB_User" />
+            <End Role="Content_Access_Denial" EntitySet="Content_Access_Denial" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Core_Acce__IdCor__34C8D9D1" Association="Self.FK__Core_Acce__IdCor__34C8D9D1">
+            <End Role="TB_Core" EntitySet="TB_Core" />
+            <End Role="Core_Access_Denial" EntitySet="Core_Access_Denial" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Core_Acce__IdUse__33D4B598" Association="Self.FK__Core_Acce__IdUse__33D4B598">
+            <End Role="TB_User" EntitySet="TB_User" />
+            <End Role="Core_Access_Denial" EntitySet="Core_Access_Denial" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_AdminN__IdAdm__2A4B4B5E" Association="Self.FK__TB_AdminN__IdAdm__2A4B4B5E">
+            <End Role="TB_Admin" EntitySet="TB_Admin" />
+            <End Role="TB_AdminNotification" EntitySet="TB_AdminNotification" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_AdminN__IdNot__29572725" Association="Self.FK__TB_AdminN__IdNot__29572725">
+            <End Role="TB_Notification" EntitySet="TB_Notification" />
+            <End Role="TB_AdminNotification" EntitySet="TB_AdminNotification" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Conten__IdUse__1273C1CD" Association="Self.FK__TB_Conten__IdUse__1273C1CD">
+            <End Role="TB_User" EntitySet="TB_User" />
+            <End Role="TB_Content" EntitySet="TB_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Core__IdUser__2D27B809" Association="Self.FK__TB_Core__IdUser__2D27B809">
+            <End Role="TB_User" EntitySet="TB_User" />
+            <End Role="TB_Core" EntitySet="TB_Core" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_CoreAd__IdAdd__3D5E1FD2" Association="Self.FK__TB_CoreAd__IdAdd__3D5E1FD2">
+            <End Role="TB_AdditionalData" EntitySet="TB_AdditionalData" />
+            <End Role="TB_CoreAdditionalData" EntitySet="TB_CoreAdditionalData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_CoreAd__IdCor__3E52440B" Association="Self.FK__TB_CoreAd__IdCor__3E52440B">
+            <End Role="TB_Core" EntitySet="TB_Core" />
+            <End Role="TB_CoreAdditionalData" EntitySet="TB_CoreAdditionalData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Genre__IdCore__440B1D61" Association="Self.FK__TB_Genre__IdCore__440B1D61">
+            <End Role="TB_Core" EntitySet="TB_Core" />
+            <End Role="TB_Genre" EntitySet="TB_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Keywor__IdCor__412EB0B6" Association="Self.FK__TB_Keywor__IdCor__412EB0B6">
+            <End Role="TB_Core" EntitySet="TB_Core" />
+            <End Role="TB_Keyword" EntitySet="TB_Keyword" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Photo__IdCont__182C9B23" Association="Self.FK__TB_Photo__IdCont__182C9B23">
+            <End Role="TB_Content" EntitySet="TB_Content" />
+            <End Role="TB_Photo" EntitySet="TB_Photo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Text__IdConte__15502E78" Association="Self.FK__TB_Text__IdConte__15502E78">
+            <End Role="TB_Content" EntitySet="TB_Content" />
+            <End Role="TB_Text" EntitySet="TB_Text" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_UserAd__IdAdd__398D8EEE" Association="Self.FK__TB_UserAd__IdAdd__398D8EEE">
+            <End Role="TB_AdditionalData" EntitySet="TB_AdditionalData" />
+            <End Role="TB_UserAdditionalData" EntitySet="TB_UserAdditionalData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_UserAd__IdUse__3A81B327" Association="Self.FK__TB_UserAd__IdUse__3A81B327">
+            <End Role="TB_User" EntitySet="TB_User" />
+            <End Role="TB_UserAdditionalData" EntitySet="TB_UserAdditionalData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_UserNo__IdNot__25869641" Association="Self.FK__TB_UserNo__IdNot__25869641">
+            <End Role="TB_Notification" EntitySet="TB_Notification" />
+            <End Role="TB_UserNotification" EntitySet="TB_UserNotification" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_UserNo__IdUse__267ABA7A" Association="Self.FK__TB_UserNo__IdUse__267ABA7A">
+            <End Role="TB_User" EntitySet="TB_User" />
+            <End Role="TB_UserNotification" EntitySet="TB_UserNotification" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Video__IdCont__1B0907CE" Association="Self.FK__TB_Video__IdCont__1B0907CE">
+            <End Role="TB_Content" EntitySet="TB_Content" />
+            <End Role="TB_Video" EntitySet="TB_Video" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PersonNETModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Assoc_Core_Content">
+          <Key>
+            <PropertyRef Name="IdAssoc" />
+          </Key>
+          <Property Name="IdAssoc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCore" Type="Int32" Nullable="false" />
+          <Property Name="IdContent" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_Content" Relationship="Self.FK__Assoc_Cor__IdCon__30F848ED" FromRole="Assoc_Core_Content" ToRole="TB_Content" />
+          <NavigationProperty Name="TB_Core" Relationship="Self.FK__Assoc_Cor__IdCor__300424B4" FromRole="Assoc_Core_Content" ToRole="TB_Core" />
+        </EntityType>
+        <EntityType Name="Content_Access_Denial">
+          <Key>
+            <PropertyRef Name="IdAccessDenial" />
+          </Key>
+          <Property Name="IdAccessDenial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <Property Name="IdContent" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_Content" Relationship="Self.FK__Content_A__IdCon__1ED998B2" FromRole="Content_Access_Denial" ToRole="TB_Content" />
+          <NavigationProperty Name="TB_User" Relationship="Self.FK__Content_A__IdUse__1DE57479" FromRole="Content_Access_Denial" ToRole="TB_User" />
+        </EntityType>
+        <EntityType Name="Core_Access_Denial">
+          <Key>
+            <PropertyRef Name="IdAccessDenial" />
+          </Key>
+          <Property Name="IdAccessDenial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <Property Name="IdCore" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TB_Core" Relationship="Self.FK__Core_Acce__IdCor__34C8D9D1" FromRole="Core_Access_Denial" ToRole="TB_Core" />
+          <NavigationProperty Name="TB_User" Relationship="Self.FK__Core_Acce__IdUse__33D4B598" FromRole="Core_Access_Denial" ToRole="TB_User" />
+        </EntityType>
+        <EntityType Name="TB_AdditionalData">
+          <Key>
+            <PropertyRef Name="IdAdditionalData" />
+          </Key>
+          <Property Name="IdAdditionalData" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataType" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="DataContent" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TB_Core" Relationship="Self.TB_CoreAdditionalData" FromRole="TB_AdditionalData" ToRole="TB_Core" />
+          <NavigationProperty Name="TB_User" Relationship="Self.TB_UserAdditionalData" FromRole="TB_AdditionalData" ToRole="TB_User" />
+        </EntityType>
+        <EntityType Name="TB_Admin">
+          <Key>
+            <PropertyRef Name="IdAdmin" />
+          </Key>
+          <Property Name="IdAdmin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="E_mail" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pass" Type="String" MaxLength="512" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CurrentStatus" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="LastAccess" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TB_Notification" Relationship="Self.TB_AdminNotification" FromRole="TB_Admin" ToRole="TB_Notification" />
+        </EntityType>
+        <EntityType Name="TB_Content">
+          <Key>
+            <PropertyRef Name="IdContent" />
+          </Key>
+          <Property Name="IdContent" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContentType" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UploadDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ContentViews" Type="Int32" Nullable="false" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Assoc_Core_Content" Relationship="Self.FK__Assoc_Cor__IdCon__30F848ED" FromRole="TB_Content" ToRole="Assoc_Core_Content" />
+          <NavigationProperty Name="Content_Access_Denial" Relationship="Self.FK__Content_A__IdCon__1ED998B2" FromRole="TB_Content" ToRole="Content_Access_Denial" />
+          <NavigationProperty Name="TB_User" Relationship="Self.FK__TB_Conten__IdUse__1273C1CD" FromRole="TB_Content" ToRole="TB_User" />
+          <NavigationProperty Name="TB_Photo" Relationship="Self.FK__TB_Photo__IdCont__182C9B23" FromRole="TB_Content" ToRole="TB_Photo" />
+          <NavigationProperty Name="TB_Text" Relationship="Self.FK__TB_Text__IdConte__15502E78" FromRole="TB_Content" ToRole="TB_Text" />
+          <NavigationProperty Name="TB_Video" Relationship="Self.FK__TB_Video__IdCont__1B0907CE" FromRole="TB_Content" ToRole="TB_Video" />
+        </EntityType>
+        <EntityType Name="TB_Core">
+          <Key>
+            <PropertyRef Name="IdCore" />
+          </Key>
+          <Property Name="IdCore" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Assoc_Core_Content" Relationship="Self.FK__Assoc_Cor__IdCor__300424B4" FromRole="TB_Core" ToRole="Assoc_Core_Content" />
+          <NavigationProperty Name="Core_Access_Denial" Relationship="Self.FK__Core_Acce__IdCor__34C8D9D1" FromRole="TB_Core" ToRole="Core_Access_Denial" />
+          <NavigationProperty Name="TB_User" Relationship="Self.FK__TB_Core__IdUser__2D27B809" FromRole="TB_Core" ToRole="TB_User" />
+          <NavigationProperty Name="TB_Genre" Relationship="Self.FK__TB_Genre__IdCore__440B1D61" FromRole="TB_Core" ToRole="TB_Genre" />
+          <NavigationProperty Name="TB_Keyword" Relationship="Self.FK__TB_Keywor__IdCor__412EB0B6" FromRole="TB_Core" ToRole="TB_Keyword" />
+          <NavigationProperty Name="TB_AdditionalData" Relationship="Self.TB_CoreAdditionalData" FromRole="TB_Core" ToRole="TB_AdditionalData" />
+        </EntityType>
+        <EntityType Name="TB_Genre">
+          <Key>
+            <PropertyRef Name="IdGenre" />
+          </Key>
+          <Property Name="IdGenre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCore" Type="Int32" Nullable="false" />
+          <Property Name="GenreContent" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TB_Core" Relationship="Self.FK__TB_Genre__IdCore__440B1D61" FromRole="TB_Genre" ToRole="TB_Core" />
+        </EntityType>
+        <EntityType Name="TB_Keyword">
+          <Key>
+            <PropertyRef Name="IdKeyword" />
+          </Key>
+          <Property Name="IdKeyword" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCore" Type="Int32" Nullable="false" />
+          <Property Name="KeywordContent" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TB_Core" Relationship="Self.FK__TB_Keywor__IdCor__412EB0B6" FromRole="TB_Keyword" ToRole="TB_Core" />
+        </EntityType>
+        <EntityType Name="TB_Notification">
+          <Key>
+            <PropertyRef Name="IdNotification" />
+          </Key>
+          <Property Name="IdNotification" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TB_Admin" Relationship="Self.TB_AdminNotification" FromRole="TB_Notification" ToRole="TB_Admin" />
+          <NavigationProperty Name="TB_User" Relationship="Self.TB_UserNotification" FromRole="TB_Notification" ToRole="TB_User" />
+        </EntityType>
+        <EntityType Name="TB_Photo">
+          <Key>
+            <PropertyRef Name="IdContent" />
+          </Key>
+          <Property Name="IdContent" Type="Int32" Nullable="false" />
+          <Property Name="DirPhoto" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Photo__IdCont__182C9B23" FromRole="TB_Photo" ToRole="TB_Content" />
+        </EntityType>
+        <EntityType Name="TB_Text">
+          <Key>
+            <PropertyRef Name="IdContent" />
+          </Key>
+          <Property Name="IdContent" Type="Int32" Nullable="false" />
+          <Property Name="ContentText" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Text__IdConte__15502E78" FromRole="TB_Text" ToRole="TB_Content" />
+        </EntityType>
+        <EntityType Name="TB_User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="E_mail" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pass" Type="String" MaxLength="512" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DirProfilePhoto" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastAccess" Type="DateTime" Precision="3" />
+          <Property Name="HasPremiumAccess" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Content_Access_Denial" Relationship="Self.FK__Content_A__IdUse__1DE57479" FromRole="TB_User" ToRole="Content_Access_Denial" />
+          <NavigationProperty Name="Core_Access_Denial" Relationship="Self.FK__Core_Acce__IdUse__33D4B598" FromRole="TB_User" ToRole="Core_Access_Denial" />
+          <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Conten__IdUse__1273C1CD" FromRole="TB_User" ToRole="TB_Content" />
+          <NavigationProperty Name="TB_Core" Relationship="Self.FK__TB_Core__IdUser__2D27B809" FromRole="TB_User" ToRole="TB_Core" />
+          <NavigationProperty Name="TB_AdditionalData" Relationship="Self.TB_UserAdditionalData" FromRole="TB_User" ToRole="TB_AdditionalData" />
+          <NavigationProperty Name="TB_Notification" Relationship="Self.TB_UserNotification" FromRole="TB_User" ToRole="TB_Notification" />
+        </EntityType>
+        <EntityType Name="TB_Video">
+          <Key>
+            <PropertyRef Name="IdContent" />
+          </Key>
+          <Property Name="IdContent" Type="Int32" Nullable="false" />
+          <Property Name="DirVideo" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Video__IdCont__1B0907CE" FromRole="TB_Video" ToRole="TB_Content" />
+        </EntityType>
+        <Association Name="FK__Assoc_Cor__IdCon__30F848ED">
+          <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
+          <End Role="Assoc_Core_Content" Type="Self.Assoc_Core_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Content">
+              <PropertyRef Name="IdContent" />
+            </Principal>
+            <Dependent Role="Assoc_Core_Content">
+              <PropertyRef Name="IdContent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Assoc_Cor__IdCor__300424B4">
+          <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
+          <End Role="Assoc_Core_Content" Type="Self.Assoc_Core_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Core">
+              <PropertyRef Name="IdCore" />
+            </Principal>
+            <Dependent Role="Assoc_Core_Content">
+              <PropertyRef Name="IdCore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Content_A__IdCon__1ED998B2">
+          <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
+          <End Role="Content_Access_Denial" Type="Self.Content_Access_Denial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Content">
+              <PropertyRef Name="IdContent" />
+            </Principal>
+            <Dependent Role="Content_Access_Denial">
+              <PropertyRef Name="IdContent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Content_A__IdUse__1DE57479">
+          <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
+          <End Role="Content_Access_Denial" Type="Self.Content_Access_Denial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="Content_Access_Denial">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Core_Acce__IdCor__34C8D9D1">
+          <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
+          <End Role="Core_Access_Denial" Type="Self.Core_Access_Denial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Core">
+              <PropertyRef Name="IdCore" />
+            </Principal>
+            <Dependent Role="Core_Access_Denial">
+              <PropertyRef Name="IdCore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Core_Acce__IdUse__33D4B598">
+          <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
+          <End Role="Core_Access_Denial" Type="Self.Core_Access_Denial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="Core_Access_Denial">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Conten__IdUse__1273C1CD">
+          <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
+          <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="TB_Content">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Photo__IdCont__182C9B23">
+          <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
+          <End Role="TB_Photo" Type="Self.TB_Photo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Content">
+              <PropertyRef Name="IdContent" />
+            </Principal>
+            <Dependent Role="TB_Photo">
+              <PropertyRef Name="IdContent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Text__IdConte__15502E78">
+          <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
+          <End Role="TB_Text" Type="Self.TB_Text" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Content">
+              <PropertyRef Name="IdContent" />
+            </Principal>
+            <Dependent Role="TB_Text">
+              <PropertyRef Name="IdContent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Video__IdCont__1B0907CE">
+          <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
+          <End Role="TB_Video" Type="Self.TB_Video" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Content">
+              <PropertyRef Name="IdContent" />
+            </Principal>
+            <Dependent Role="TB_Video">
+              <PropertyRef Name="IdContent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Core__IdUser__2D27B809">
+          <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
+          <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="TB_Core">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Genre__IdCore__440B1D61">
+          <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
+          <End Role="TB_Genre" Type="Self.TB_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Core">
+              <PropertyRef Name="IdCore" />
+            </Principal>
+            <Dependent Role="TB_Genre">
+              <PropertyRef Name="IdCore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TB_Keywor__IdCor__412EB0B6">
+          <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
+          <End Role="TB_Keyword" Type="Self.TB_Keyword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Core">
+              <PropertyRef Name="IdCore" />
+            </Principal>
+            <Dependent Role="TB_Keyword">
+              <PropertyRef Name="IdCore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TB_AdminNotification">
+          <End Role="TB_Admin" Type="Self.TB_Admin" Multiplicity="0..1" />
+          <End Role="TB_Notification" Type="Self.TB_Notification" Multiplicity="*" />
+        </Association>
+        <Association Name="TB_CoreAdditionalData">
+          <End Role="TB_AdditionalData" Type="Self.TB_AdditionalData" Multiplicity="*" />
+          <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="0..1" />
+        </Association>
+        <Association Name="TB_UserAdditionalData">
+          <End Role="TB_AdditionalData" Type="Self.TB_AdditionalData" Multiplicity="*" />
+          <End Role="TB_User" Type="Self.TB_User" Multiplicity="0..1" />
+        </Association>
+        <Association Name="TB_UserNotification">
+          <End Role="TB_Notification" Type="Self.TB_Notification" Multiplicity="*" />
+          <End Role="TB_User" Type="Self.TB_User" Multiplicity="0..1" />
+        </Association>
+        <EntityContainer Name="PersonNETEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Assoc_Core_Content" EntityType="Self.Assoc_Core_Content" />
+          <EntitySet Name="Content_Access_Denial" EntityType="Self.Content_Access_Denial" />
+          <EntitySet Name="Core_Access_Denial" EntityType="Self.Core_Access_Denial" />
+          <EntitySet Name="TB_AdditionalData" EntityType="Self.TB_AdditionalData" />
+          <EntitySet Name="TB_Admin" EntityType="Self.TB_Admin" />
+          <EntitySet Name="TB_Content" EntityType="Self.TB_Content" />
+          <EntitySet Name="TB_Core" EntityType="Self.TB_Core" />
+          <EntitySet Name="TB_Genre" EntityType="Self.TB_Genre" />
+          <EntitySet Name="TB_Keyword" EntityType="Self.TB_Keyword" />
+          <EntitySet Name="TB_Notification" EntityType="Self.TB_Notification" />
+          <EntitySet Name="TB_Photo" EntityType="Self.TB_Photo" />
+          <EntitySet Name="TB_Text" EntityType="Self.TB_Text" />
+          <EntitySet Name="TB_User" EntityType="Self.TB_User" />
+          <EntitySet Name="TB_Video" EntityType="Self.TB_Video" />
+          <AssociationSet Name="FK__Assoc_Cor__IdCon__30F848ED" Association="Self.FK__Assoc_Cor__IdCon__30F848ED">
+            <End Role="TB_Content" EntitySet="TB_Content" />
+            <End Role="Assoc_Core_Content" EntitySet="Assoc_Core_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Assoc_Cor__IdCor__300424B4" Association="Self.FK__Assoc_Cor__IdCor__300424B4">
+            <End Role="TB_Core" EntitySet="TB_Core" />
+            <End Role="Assoc_Core_Content" EntitySet="Assoc_Core_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Content_A__IdCon__1ED998B2" Association="Self.FK__Content_A__IdCon__1ED998B2">
+            <End Role="TB_Content" EntitySet="TB_Content" />
+            <End Role="Content_Access_Denial" EntitySet="Content_Access_Denial" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Content_A__IdUse__1DE57479" Association="Self.FK__Content_A__IdUse__1DE57479">
+            <End Role="TB_User" EntitySet="TB_User" />
+            <End Role="Content_Access_Denial" EntitySet="Content_Access_Denial" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Core_Acce__IdCor__34C8D9D1" Association="Self.FK__Core_Acce__IdCor__34C8D9D1">
+            <End Role="TB_Core" EntitySet="TB_Core" />
+            <End Role="Core_Access_Denial" EntitySet="Core_Access_Denial" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Core_Acce__IdUse__33D4B598" Association="Self.FK__Core_Acce__IdUse__33D4B598">
+            <End Role="TB_User" EntitySet="TB_User" />
+            <End Role="Core_Access_Denial" EntitySet="Core_Access_Denial" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Conten__IdUse__1273C1CD" Association="Self.FK__TB_Conten__IdUse__1273C1CD">
+            <End Role="TB_User" EntitySet="TB_User" />
+            <End Role="TB_Content" EntitySet="TB_Content" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Photo__IdCont__182C9B23" Association="Self.FK__TB_Photo__IdCont__182C9B23">
+            <End Role="TB_Content" EntitySet="TB_Content" />
+            <End Role="TB_Photo" EntitySet="TB_Photo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Text__IdConte__15502E78" Association="Self.FK__TB_Text__IdConte__15502E78">
+            <End Role="TB_Content" EntitySet="TB_Content" />
+            <End Role="TB_Text" EntitySet="TB_Text" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Video__IdCont__1B0907CE" Association="Self.FK__TB_Video__IdCont__1B0907CE">
+            <End Role="TB_Content" EntitySet="TB_Content" />
+            <End Role="TB_Video" EntitySet="TB_Video" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Core__IdUser__2D27B809" Association="Self.FK__TB_Core__IdUser__2D27B809">
+            <End Role="TB_User" EntitySet="TB_User" />
+            <End Role="TB_Core" EntitySet="TB_Core" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Genre__IdCore__440B1D61" Association="Self.FK__TB_Genre__IdCore__440B1D61">
+            <End Role="TB_Core" EntitySet="TB_Core" />
+            <End Role="TB_Genre" EntitySet="TB_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TB_Keywor__IdCor__412EB0B6" Association="Self.FK__TB_Keywor__IdCor__412EB0B6">
+            <End Role="TB_Core" EntitySet="TB_Core" />
+            <End Role="TB_Keyword" EntitySet="TB_Keyword" />
+          </AssociationSet>
+          <AssociationSet Name="TB_AdminNotification" Association="Self.TB_AdminNotification">
+            <End Role="TB_Admin" EntitySet="TB_Admin" />
+            <End Role="TB_Notification" EntitySet="TB_Notification" />
+          </AssociationSet>
+          <AssociationSet Name="TB_CoreAdditionalData" Association="Self.TB_CoreAdditionalData">
+            <End Role="TB_AdditionalData" EntitySet="TB_AdditionalData" />
+            <End Role="TB_Core" EntitySet="TB_Core" />
+          </AssociationSet>
+          <AssociationSet Name="TB_UserAdditionalData" Association="Self.TB_UserAdditionalData">
+            <End Role="TB_AdditionalData" EntitySet="TB_AdditionalData" />
+            <End Role="TB_User" EntitySet="TB_User" />
+          </AssociationSet>
+          <AssociationSet Name="TB_UserNotification" Association="Self.TB_UserNotification">
+            <End Role="TB_Notification" EntitySet="TB_Notification" />
+            <End Role="TB_User" EntitySet="TB_User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PersonNETModelStoreContainer" CdmEntityContainer="PersonNETEntities">
+          <EntitySetMapping Name="Assoc_Core_Content">
+            <EntityTypeMapping TypeName="PersonNETModel.Assoc_Core_Content">
+              <MappingFragment StoreEntitySet="Assoc_Core_Content">
+                <ScalarProperty Name="IdAssoc" ColumnName="IdAssoc" />
+                <ScalarProperty Name="IdCore" ColumnName="IdCore" />
+                <ScalarProperty Name="IdContent" ColumnName="IdContent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Content_Access_Denial">
+            <EntityTypeMapping TypeName="PersonNETModel.Content_Access_Denial">
+              <MappingFragment StoreEntitySet="Content_Access_Denial">
+                <ScalarProperty Name="IdAccessDenial" ColumnName="IdAccessDenial" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="IdContent" ColumnName="IdContent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Core_Access_Denial">
+            <EntityTypeMapping TypeName="PersonNETModel.Core_Access_Denial">
+              <MappingFragment StoreEntitySet="Core_Access_Denial">
+                <ScalarProperty Name="IdAccessDenial" ColumnName="IdAccessDenial" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="IdCore" ColumnName="IdCore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_AdditionalData">
+            <EntityTypeMapping TypeName="PersonNETModel.TB_AdditionalData">
+              <MappingFragment StoreEntitySet="TB_AdditionalData">
+                <ScalarProperty Name="IdAdditionalData" ColumnName="IdAdditionalData" />
+                <ScalarProperty Name="DataType" ColumnName="DataType" />
+                <ScalarProperty Name="DataContent" ColumnName="DataContent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Admin">
+            <EntityTypeMapping TypeName="PersonNETModel.TB_Admin">
+              <MappingFragment StoreEntitySet="TB_Admin">
+                <ScalarProperty Name="IdAdmin" ColumnName="IdAdmin" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="E_mail" ColumnName="E_mail" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="CurrentStatus" ColumnName="CurrentStatus" />
+                <ScalarProperty Name="LastAccess" ColumnName="LastAccess" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Content">
+            <EntityTypeMapping TypeName="PersonNETModel.TB_Content">
+              <MappingFragment StoreEntitySet="TB_Content">
+                <ScalarProperty Name="IdContent" ColumnName="IdContent" />
+                <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+                <ScalarProperty Name="ContentViews" ColumnName="ContentViews" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Core">
+            <EntityTypeMapping TypeName="PersonNETModel.TB_Core">
+              <MappingFragment StoreEntitySet="TB_Core">
+                <ScalarProperty Name="IdCore" ColumnName="IdCore" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Genre">
+            <EntityTypeMapping TypeName="PersonNETModel.TB_Genre">
+              <MappingFragment StoreEntitySet="TB_Genre">
+                <ScalarProperty Name="IdGenre" ColumnName="IdGenre" />
+                <ScalarProperty Name="IdCore" ColumnName="IdCore" />
+                <ScalarProperty Name="GenreContent" ColumnName="GenreContent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Keyword">
+            <EntityTypeMapping TypeName="PersonNETModel.TB_Keyword">
+              <MappingFragment StoreEntitySet="TB_Keyword">
+                <ScalarProperty Name="IdKeyword" ColumnName="IdKeyword" />
+                <ScalarProperty Name="IdCore" ColumnName="IdCore" />
+                <ScalarProperty Name="KeywordContent" ColumnName="KeywordContent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Notification">
+            <EntityTypeMapping TypeName="PersonNETModel.TB_Notification">
+              <MappingFragment StoreEntitySet="TB_Notification">
+                <ScalarProperty Name="IdNotification" ColumnName="IdNotification" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Photo">
+            <EntityTypeMapping TypeName="PersonNETModel.TB_Photo">
+              <MappingFragment StoreEntitySet="TB_Photo">
+                <ScalarProperty Name="IdContent" ColumnName="IdContent" />
+                <ScalarProperty Name="DirPhoto" ColumnName="DirPhoto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Text">
+            <EntityTypeMapping TypeName="PersonNETModel.TB_Text">
+              <MappingFragment StoreEntitySet="TB_Text">
+                <ScalarProperty Name="IdContent" ColumnName="IdContent" />
+                <ScalarProperty Name="ContentText" ColumnName="ContentText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_User">
+            <EntityTypeMapping TypeName="PersonNETModel.TB_User">
+              <MappingFragment StoreEntitySet="TB_User">
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="E_mail" ColumnName="E_mail" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="DirProfilePhoto" ColumnName="DirProfilePhoto" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="LastAccess" ColumnName="LastAccess" />
+                <ScalarProperty Name="HasPremiumAccess" ColumnName="HasPremiumAccess" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Video">
+            <EntityTypeMapping TypeName="PersonNETModel.TB_Video">
+              <MappingFragment StoreEntitySet="TB_Video">
+                <ScalarProperty Name="IdContent" ColumnName="IdContent" />
+                <ScalarProperty Name="DirVideo" ColumnName="DirVideo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="TB_AdminNotification" TypeName="PersonNETModel.TB_AdminNotification" StoreEntitySet="TB_AdminNotification">
+            <EndProperty Name="TB_Admin">
+              <ScalarProperty Name="IdAdmin" ColumnName="IdAdmin" />
+            </EndProperty>
+            <EndProperty Name="TB_Notification">
+              <ScalarProperty Name="IdNotification" ColumnName="IdNotification" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TB_CoreAdditionalData" TypeName="PersonNETModel.TB_CoreAdditionalData" StoreEntitySet="TB_CoreAdditionalData">
+            <EndProperty Name="TB_AdditionalData">
+              <ScalarProperty Name="IdAdditionalData" ColumnName="IdAdditionalData" />
+            </EndProperty>
+            <EndProperty Name="TB_Core">
+              <ScalarProperty Name="IdCore" ColumnName="IdCore" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TB_UserAdditionalData" TypeName="PersonNETModel.TB_UserAdditionalData" StoreEntitySet="TB_UserAdditionalData">
+            <EndProperty Name="TB_AdditionalData">
+              <ScalarProperty Name="IdAdditionalData" ColumnName="IdAdditionalData" />
+            </EndProperty>
+            <EndProperty Name="TB_User">
+              <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TB_UserNotification" TypeName="PersonNETModel.TB_UserNotification" StoreEntitySet="TB_UserNotification">
+            <EndProperty Name="TB_Notification">
+              <ScalarProperty Name="IdNotification" ColumnName="IdNotification" />
+            </EndProperty>
+            <EndProperty Name="TB_User">
+              <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

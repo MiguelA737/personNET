@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7a3dfb84b930477aa60f8322ffa9f3a9" Name="Diagram1">
+        <EntityTypeShape EntityType="PersonNETModel.Assoc_Core_Content" Width="1.5" PointX="13.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.Content_Access_Denial" Width="1.5" PointX="13.5" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.Core_Access_Denial" Width="1.5" PointX="8.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.TB_AdditionalData" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.TB_Admin" Width="1.5" PointX="1.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.TB_Content" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.TB_Core" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.TB_Genre" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.TB_Keyword" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.TB_Notification" Width="1.5" PointX="3.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.TB_Photo" Width="1.5" PointX="10.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.TB_Text" Width="1.5" PointX="10.5" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.TB_User" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PersonNETModel.TB_Video" Width="1.5" PointX="10.5" PointY="15.875" IsExpanded="true" />
+        <AssociationConnector Association="PersonNETModel.FK__Assoc_Cor__IdCon__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.FK__Assoc_Cor__IdCor__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.FK__Content_A__IdCon__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.FK__Content_A__IdUse__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.FK__Core_Acce__IdCor__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.FK__Core_Acce__IdUse__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.FK__TB_Conten__IdUse__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.FK__TB_Photo__IdCont__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.FK__TB_Text__IdConte__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.FK__TB_Video__IdCont__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.FK__TB_Core__IdUser__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.FK__TB_Genre__IdCore__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.FK__TB_Keywor__IdCor__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.TB_AdminNotification" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.TB_CoreAdditionalData" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.TB_UserAdditionalData" ManuallyRouted="false" />
+        <AssociationConnector Association="PersonNETModel.TB_UserNotification" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

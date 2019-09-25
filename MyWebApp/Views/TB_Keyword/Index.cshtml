@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MyWebApp.Models.TB_Keyword>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KeywordContent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TB_Core.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KeywordContent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TB_Core.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdKeyword }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdKeyword }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdKeyword })
+        </td>
+    </tr>
+}
+
+</table>

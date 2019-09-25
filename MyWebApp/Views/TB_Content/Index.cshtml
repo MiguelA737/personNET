@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MyWebApp.Models.TB_Content>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UploadDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentViews)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TB_User.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TB_Photo.DirPhoto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TB_Text.ContentText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TB_Video.DirVideo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UploadDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContentViews)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TB_User.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TB_Photo.DirPhoto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TB_Text.ContentText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TB_Video.DirVideo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdContent }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdContent }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdContent })
+        </td>
+    </tr>
+}
+
+</table>

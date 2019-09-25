@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PersonNETModelStoreContainer" CdmEntityContainer="PersonNETEntities">
+    <EntitySetMapping Name="Assoc_Core_Content">
+      <EntityTypeMapping TypeName="PersonNETModel.Assoc_Core_Content">
+        <MappingFragment StoreEntitySet="Assoc_Core_Content">
+          <ScalarProperty Name="IdAssoc" ColumnName="IdAssoc" />
+          <ScalarProperty Name="IdCore" ColumnName="IdCore" />
+          <ScalarProperty Name="IdContent" ColumnName="IdContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Content_Access_Denial">
+      <EntityTypeMapping TypeName="PersonNETModel.Content_Access_Denial">
+        <MappingFragment StoreEntitySet="Content_Access_Denial">
+          <ScalarProperty Name="IdAccessDenial" ColumnName="IdAccessDenial" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="IdContent" ColumnName="IdContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Core_Access_Denial">
+      <EntityTypeMapping TypeName="PersonNETModel.Core_Access_Denial">
+        <MappingFragment StoreEntitySet="Core_Access_Denial">
+          <ScalarProperty Name="IdAccessDenial" ColumnName="IdAccessDenial" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="IdCore" ColumnName="IdCore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_AdditionalData">
+      <EntityTypeMapping TypeName="PersonNETModel.TB_AdditionalData">
+        <MappingFragment StoreEntitySet="TB_AdditionalData">
+          <ScalarProperty Name="IdAdditionalData" ColumnName="IdAdditionalData" />
+          <ScalarProperty Name="DataType" ColumnName="DataType" />
+          <ScalarProperty Name="DataContent" ColumnName="DataContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Admin">
+      <EntityTypeMapping TypeName="PersonNETModel.TB_Admin">
+        <MappingFragment StoreEntitySet="TB_Admin">
+          <ScalarProperty Name="IdAdmin" ColumnName="IdAdmin" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="E_mail" ColumnName="E_mail" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="CurrentStatus" ColumnName="CurrentStatus" />
+          <ScalarProperty Name="LastAccess" ColumnName="LastAccess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Content">
+      <EntityTypeMapping TypeName="PersonNETModel.TB_Content">
+        <MappingFragment StoreEntitySet="TB_Content">
+          <ScalarProperty Name="IdContent" ColumnName="IdContent" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+          <ScalarProperty Name="ContentViews" ColumnName="ContentViews" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Core">
+      <EntityTypeMapping TypeName="PersonNETModel.TB_Core">
+        <MappingFragment StoreEntitySet="TB_Core">
+          <ScalarProperty Name="IdCore" ColumnName="IdCore" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Genre">
+      <EntityTypeMapping TypeName="PersonNETModel.TB_Genre">
+        <MappingFragment StoreEntitySet="TB_Genre">
+          <ScalarProperty Name="IdGenre" ColumnName="IdGenre" />
+          <ScalarProperty Name="IdCore" ColumnName="IdCore" />
+          <ScalarProperty Name="GenreContent" ColumnName="GenreContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Keyword">
+      <EntityTypeMapping TypeName="PersonNETModel.TB_Keyword">
+        <MappingFragment StoreEntitySet="TB_Keyword">
+          <ScalarProperty Name="IdKeyword" ColumnName="IdKeyword" />
+          <ScalarProperty Name="IdCore" ColumnName="IdCore" />
+          <ScalarProperty Name="KeywordContent" ColumnName="KeywordContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Notification">
+      <EntityTypeMapping TypeName="PersonNETModel.TB_Notification">
+        <MappingFragment StoreEntitySet="TB_Notification">
+          <ScalarProperty Name="IdNotification" ColumnName="IdNotification" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Photo">
+      <EntityTypeMapping TypeName="PersonNETModel.TB_Photo">
+        <MappingFragment StoreEntitySet="TB_Photo">
+          <ScalarProperty Name="IdContent" ColumnName="IdContent" />
+          <ScalarProperty Name="DirPhoto" ColumnName="DirPhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Text">
+      <EntityTypeMapping TypeName="PersonNETModel.TB_Text">
+        <MappingFragment StoreEntitySet="TB_Text">
+          <ScalarProperty Name="IdContent" ColumnName="IdContent" />
+          <ScalarProperty Name="ContentText" ColumnName="ContentText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_User">
+      <EntityTypeMapping TypeName="PersonNETModel.TB_User">
+        <MappingFragment StoreEntitySet="TB_User">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="E_mail" ColumnName="E_mail" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="DirProfilePhoto" ColumnName="DirProfilePhoto" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="LastAccess" ColumnName="LastAccess" />
+          <ScalarProperty Name="HasPremiumAccess" ColumnName="HasPremiumAccess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Video">
+      <EntityTypeMapping TypeName="PersonNETModel.TB_Video">
+        <MappingFragment StoreEntitySet="TB_Video">
+          <ScalarProperty Name="IdContent" ColumnName="IdContent" />
+          <ScalarProperty Name="DirVideo" ColumnName="DirVideo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TB_AdminNotification" TypeName="PersonNETModel.TB_AdminNotification" StoreEntitySet="TB_AdminNotification">
+      <EndProperty Name="TB_Admin">
+        <ScalarProperty Name="IdAdmin" ColumnName="IdAdmin" />
+      </EndProperty>
+      <EndProperty Name="TB_Notification">
+        <ScalarProperty Name="IdNotification" ColumnName="IdNotification" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TB_CoreAdditionalData" TypeName="PersonNETModel.TB_CoreAdditionalData" StoreEntitySet="TB_CoreAdditionalData">
+      <EndProperty Name="TB_AdditionalData">
+        <ScalarProperty Name="IdAdditionalData" ColumnName="IdAdditionalData" />
+      </EndProperty>
+      <EndProperty Name="TB_Core">
+        <ScalarProperty Name="IdCore" ColumnName="IdCore" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TB_UserAdditionalData" TypeName="PersonNETModel.TB_UserAdditionalData" StoreEntitySet="TB_UserAdditionalData">
+      <EndProperty Name="TB_AdditionalData">
+        <ScalarProperty Name="IdAdditionalData" ColumnName="IdAdditionalData" />
+      </EndProperty>
+      <EndProperty Name="TB_User">
+        <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TB_UserNotification" TypeName="PersonNETModel.TB_UserNotification" StoreEntitySet="TB_UserNotification">
+      <EndProperty Name="TB_Notification">
+        <ScalarProperty Name="IdNotification" ColumnName="IdNotification" />
+      </EndProperty>
+      <EndProperty Name="TB_User">
+        <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

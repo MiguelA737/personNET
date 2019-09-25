@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MyWebApp.Models.Content_Access_Denial>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TB_Content.ContentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TB_User.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TB_Content.ContentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TB_User.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdAccessDenial }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdAccessDenial }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdAccessDenial })
+        </td>
+    </tr>
+}
+
+</table>

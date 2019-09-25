@@ -1,0 +1,34 @@
+﻿@model MyWebApp.Models.TB_Genre
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TB_Genre</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GenreContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GenreContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TB_Core.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TB_Core.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdGenre }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

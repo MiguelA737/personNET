@@ -1,0 +1,74 @@
+﻿@model MyWebApp.Models.TB_Content
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TB_Content</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UploadDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UploadDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentViews)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentViews)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TB_User.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TB_User.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TB_Photo.DirPhoto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TB_Photo.DirPhoto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TB_Text.ContentText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TB_Text.ContentText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TB_Video.DirVideo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TB_Video.DirVideo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdContent }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

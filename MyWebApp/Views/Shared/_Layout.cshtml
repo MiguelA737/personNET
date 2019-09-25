@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @*<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Person.NET</title>
+    <link rel="stylesheet" href="~/css/Principal.css">
+    
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+    <div class="header">
+        @*<img src="~/Views/img/Fundo.png" alt="Person.NET" id="logo">*@
+        <img id="logo" alt="Person.NET" src="@Url.Content("~/Views/img/Fundo.png")" />
+
+    </div>
+
+    <div class="topnav">
+        <div id="divBusca">
+            <input type="text" placeholder="Buscar..." />
+            <button class="btnBusca">Buscar</button>
+        </div>
+        @Html.ActionLink("Home", "Index", "Home")
+        @Html.ActionLink("About", "Solicitações", "Home")
+        @Html.ActionLink("Contact", "Notificações", "Home")
+        <a href="#">Perfil</a>
+        <a href="#" style="float:right">Opções</a>
+
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
