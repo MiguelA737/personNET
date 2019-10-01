@@ -216,10 +216,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\Cadastrar.css" />
+    <Content Include="css\Inicial.css" />
+    <Content Include="css\Login.css" />
+    <Content Include="css\Principal.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\Fundo.png" />
     <Content Include="Models\personNETDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>personNETDB.edmx</DependentUpon>
@@ -250,12 +255,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Views\css\Cadastrar.css" />
-    <Content Include="Views\css\Inicial.css" />
-    <Content Include="Views\css\Login.css" />
-    <Content Include="Views\css\Principal.css" />
-    <Content Include="Views\css\StyleSheet1.css" />
-    <Content Include="Views\img\Fundo.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
