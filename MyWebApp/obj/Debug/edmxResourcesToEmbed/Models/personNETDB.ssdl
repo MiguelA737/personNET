@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="PersonNETModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="PERSONNETModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Assoc_Core_Content">
     <Key>
       <PropertyRef Name="IdAssoc" />
@@ -147,7 +147,7 @@
     <Property Name="IdContent" Type="int" Nullable="false" />
     <Property Name="DirVideo" Type="varchar" MaxLength="64" Nullable="false" />
   </EntityType>
-  <Association Name="FK__Assoc_Cor__IdCon__30F848ED">
+  <Association Name="FK__Assoc_Cor__IdCon__32E0915F">
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
     <End Role="Assoc_Core_Content" Type="Self.Assoc_Core_Content" Multiplicity="*" />
     <ReferentialConstraint>
@@ -159,7 +159,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Assoc_Cor__IdCor__300424B4">
+  <Association Name="FK__Assoc_Cor__IdCor__31EC6D26">
     <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
     <End Role="Assoc_Core_Content" Type="Self.Assoc_Core_Content" Multiplicity="*" />
     <ReferentialConstraint>
@@ -171,7 +171,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Content_A__IdCon__1ED998B2">
+  <Association Name="FK__Content_A__IdCon__1FCDBCEB">
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
     <End Role="Content_Access_Denial" Type="Self.Content_Access_Denial" Multiplicity="*" />
     <ReferentialConstraint>
@@ -183,7 +183,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Content_A__IdUse__1DE57479">
+  <Association Name="FK__Content_A__IdUse__1ED998B2">
     <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
     <End Role="Content_Access_Denial" Type="Self.Content_Access_Denial" Multiplicity="*" />
     <ReferentialConstraint>
@@ -195,7 +195,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Core_Acce__IdCor__34C8D9D1">
+  <Association Name="FK__Core_Acce__IdCor__36B12243">
     <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
     <End Role="Core_Access_Denial" Type="Self.Core_Access_Denial" Multiplicity="*" />
     <ReferentialConstraint>
@@ -207,7 +207,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Core_Acce__IdUse__33D4B598">
+  <Association Name="FK__Core_Acce__IdUse__35BCFE0A">
     <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
     <End Role="Core_Access_Denial" Type="Self.Core_Access_Denial" Multiplicity="*" />
     <ReferentialConstraint>
@@ -219,7 +219,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_AdminN__IdAdm__2A4B4B5E">
+  <Association Name="FK__TB_AdminN__IdAdm__2C3393D0">
     <End Role="TB_Admin" Type="Self.TB_Admin" Multiplicity="1" />
     <End Role="TB_AdminNotification" Type="Self.TB_AdminNotification" Multiplicity="*" />
     <ReferentialConstraint>
@@ -231,7 +231,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_AdminN__IdNot__29572725">
+  <Association Name="FK__TB_AdminN__IdNot__2B3F6F97">
     <End Role="TB_Notification" Type="Self.TB_Notification" Multiplicity="1" />
     <End Role="TB_AdminNotification" Type="Self.TB_AdminNotification" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -243,7 +243,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Conten__IdUse__1273C1CD">
+  <Association Name="FK__TB_Conten__IdUse__1367E606">
     <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="*" />
     <ReferentialConstraint>
@@ -255,7 +255,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Core__IdUser__2D27B809">
+  <Association Name="FK__TB_Core__IdUser__2F10007B">
     <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
     <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="*" />
     <ReferentialConstraint>
@@ -267,7 +267,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_CoreAd__IdAdd__3D5E1FD2">
+  <Association Name="FK__TB_CoreAd__IdAdd__3F466844">
     <End Role="TB_AdditionalData" Type="Self.TB_AdditionalData" Multiplicity="1" />
     <End Role="TB_CoreAdditionalData" Type="Self.TB_CoreAdditionalData" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -279,7 +279,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_CoreAd__IdCor__3E52440B">
+  <Association Name="FK__TB_CoreAd__IdCor__403A8C7D">
     <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
     <End Role="TB_CoreAdditionalData" Type="Self.TB_CoreAdditionalData" Multiplicity="*" />
     <ReferentialConstraint>
@@ -291,7 +291,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Genre__IdCore__440B1D61">
+  <Association Name="FK__TB_Genre__IdCore__45F365D3">
     <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
     <End Role="TB_Genre" Type="Self.TB_Genre" Multiplicity="*" />
     <ReferentialConstraint>
@@ -303,7 +303,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Keywor__IdCor__412EB0B6">
+  <Association Name="FK__TB_Keywor__IdCor__4316F928">
     <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
     <End Role="TB_Keyword" Type="Self.TB_Keyword" Multiplicity="*" />
     <ReferentialConstraint>
@@ -315,7 +315,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Photo__IdCont__182C9B23">
+  <Association Name="FK__TB_Photo__IdCont__1920BF5C">
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
     <End Role="TB_Photo" Type="Self.TB_Photo" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -327,7 +327,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Text__IdConte__15502E78">
+  <Association Name="FK__TB_Text__IdConte__164452B1">
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
     <End Role="TB_Text" Type="Self.TB_Text" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -339,7 +339,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_UserAd__IdAdd__398D8EEE">
+  <Association Name="FK__TB_UserAd__IdAdd__3B75D760">
     <End Role="TB_AdditionalData" Type="Self.TB_AdditionalData" Multiplicity="1" />
     <End Role="TB_UserAdditionalData" Type="Self.TB_UserAdditionalData" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -351,7 +351,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_UserAd__IdUse__3A81B327">
+  <Association Name="FK__TB_UserAd__IdUse__3C69FB99">
     <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
     <End Role="TB_UserAdditionalData" Type="Self.TB_UserAdditionalData" Multiplicity="*" />
     <ReferentialConstraint>
@@ -363,7 +363,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_UserNo__IdNot__25869641">
+  <Association Name="FK__TB_UserNo__IdNot__276EDEB3">
     <End Role="TB_Notification" Type="Self.TB_Notification" Multiplicity="1" />
     <End Role="TB_UserNotification" Type="Self.TB_UserNotification" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -375,7 +375,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_UserNo__IdUse__267ABA7A">
+  <Association Name="FK__TB_UserNo__IdUse__286302EC">
     <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
     <End Role="TB_UserNotification" Type="Self.TB_UserNotification" Multiplicity="*" />
     <ReferentialConstraint>
@@ -387,7 +387,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Video__IdCont__1B0907CE">
+  <Association Name="FK__TB_Video__IdCont__1BFD2C07">
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
     <End Role="TB_Video" Type="Self.TB_Video" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -399,7 +399,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="PersonNETModelStoreContainer">
+  <EntityContainer Name="PERSONNETModelStoreContainer">
     <EntitySet Name="Assoc_Core_Content" EntityType="Self.Assoc_Core_Content" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Content_Access_Denial" EntityType="Self.Content_Access_Denial" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Core_Access_Denial" EntityType="Self.Core_Access_Denial" Schema="dbo" store:Type="Tables" />
@@ -418,87 +418,87 @@
     <EntitySet Name="TB_UserAdditionalData" EntityType="Self.TB_UserAdditionalData" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_UserNotification" EntityType="Self.TB_UserNotification" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_Video" EntityType="Self.TB_Video" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Assoc_Cor__IdCon__30F848ED" Association="Self.FK__Assoc_Cor__IdCon__30F848ED">
+    <AssociationSet Name="FK__Assoc_Cor__IdCon__32E0915F" Association="Self.FK__Assoc_Cor__IdCon__32E0915F">
       <End Role="TB_Content" EntitySet="TB_Content" />
       <End Role="Assoc_Core_Content" EntitySet="Assoc_Core_Content" />
     </AssociationSet>
-    <AssociationSet Name="FK__Assoc_Cor__IdCor__300424B4" Association="Self.FK__Assoc_Cor__IdCor__300424B4">
+    <AssociationSet Name="FK__Assoc_Cor__IdCor__31EC6D26" Association="Self.FK__Assoc_Cor__IdCor__31EC6D26">
       <End Role="TB_Core" EntitySet="TB_Core" />
       <End Role="Assoc_Core_Content" EntitySet="Assoc_Core_Content" />
     </AssociationSet>
-    <AssociationSet Name="FK__Content_A__IdCon__1ED998B2" Association="Self.FK__Content_A__IdCon__1ED998B2">
+    <AssociationSet Name="FK__Content_A__IdCon__1FCDBCEB" Association="Self.FK__Content_A__IdCon__1FCDBCEB">
       <End Role="TB_Content" EntitySet="TB_Content" />
       <End Role="Content_Access_Denial" EntitySet="Content_Access_Denial" />
     </AssociationSet>
-    <AssociationSet Name="FK__Content_A__IdUse__1DE57479" Association="Self.FK__Content_A__IdUse__1DE57479">
+    <AssociationSet Name="FK__Content_A__IdUse__1ED998B2" Association="Self.FK__Content_A__IdUse__1ED998B2">
       <End Role="TB_User" EntitySet="TB_User" />
       <End Role="Content_Access_Denial" EntitySet="Content_Access_Denial" />
     </AssociationSet>
-    <AssociationSet Name="FK__Core_Acce__IdCor__34C8D9D1" Association="Self.FK__Core_Acce__IdCor__34C8D9D1">
+    <AssociationSet Name="FK__Core_Acce__IdCor__36B12243" Association="Self.FK__Core_Acce__IdCor__36B12243">
       <End Role="TB_Core" EntitySet="TB_Core" />
       <End Role="Core_Access_Denial" EntitySet="Core_Access_Denial" />
     </AssociationSet>
-    <AssociationSet Name="FK__Core_Acce__IdUse__33D4B598" Association="Self.FK__Core_Acce__IdUse__33D4B598">
+    <AssociationSet Name="FK__Core_Acce__IdUse__35BCFE0A" Association="Self.FK__Core_Acce__IdUse__35BCFE0A">
       <End Role="TB_User" EntitySet="TB_User" />
       <End Role="Core_Access_Denial" EntitySet="Core_Access_Denial" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_AdminN__IdAdm__2A4B4B5E" Association="Self.FK__TB_AdminN__IdAdm__2A4B4B5E">
+    <AssociationSet Name="FK__TB_AdminN__IdAdm__2C3393D0" Association="Self.FK__TB_AdminN__IdAdm__2C3393D0">
       <End Role="TB_Admin" EntitySet="TB_Admin" />
       <End Role="TB_AdminNotification" EntitySet="TB_AdminNotification" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_AdminN__IdNot__29572725" Association="Self.FK__TB_AdminN__IdNot__29572725">
+    <AssociationSet Name="FK__TB_AdminN__IdNot__2B3F6F97" Association="Self.FK__TB_AdminN__IdNot__2B3F6F97">
       <End Role="TB_Notification" EntitySet="TB_Notification" />
       <End Role="TB_AdminNotification" EntitySet="TB_AdminNotification" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Conten__IdUse__1273C1CD" Association="Self.FK__TB_Conten__IdUse__1273C1CD">
+    <AssociationSet Name="FK__TB_Conten__IdUse__1367E606" Association="Self.FK__TB_Conten__IdUse__1367E606">
       <End Role="TB_User" EntitySet="TB_User" />
       <End Role="TB_Content" EntitySet="TB_Content" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Core__IdUser__2D27B809" Association="Self.FK__TB_Core__IdUser__2D27B809">
+    <AssociationSet Name="FK__TB_Core__IdUser__2F10007B" Association="Self.FK__TB_Core__IdUser__2F10007B">
       <End Role="TB_User" EntitySet="TB_User" />
       <End Role="TB_Core" EntitySet="TB_Core" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_CoreAd__IdAdd__3D5E1FD2" Association="Self.FK__TB_CoreAd__IdAdd__3D5E1FD2">
+    <AssociationSet Name="FK__TB_CoreAd__IdAdd__3F466844" Association="Self.FK__TB_CoreAd__IdAdd__3F466844">
       <End Role="TB_AdditionalData" EntitySet="TB_AdditionalData" />
       <End Role="TB_CoreAdditionalData" EntitySet="TB_CoreAdditionalData" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_CoreAd__IdCor__3E52440B" Association="Self.FK__TB_CoreAd__IdCor__3E52440B">
+    <AssociationSet Name="FK__TB_CoreAd__IdCor__403A8C7D" Association="Self.FK__TB_CoreAd__IdCor__403A8C7D">
       <End Role="TB_Core" EntitySet="TB_Core" />
       <End Role="TB_CoreAdditionalData" EntitySet="TB_CoreAdditionalData" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Genre__IdCore__440B1D61" Association="Self.FK__TB_Genre__IdCore__440B1D61">
+    <AssociationSet Name="FK__TB_Genre__IdCore__45F365D3" Association="Self.FK__TB_Genre__IdCore__45F365D3">
       <End Role="TB_Core" EntitySet="TB_Core" />
       <End Role="TB_Genre" EntitySet="TB_Genre" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Keywor__IdCor__412EB0B6" Association="Self.FK__TB_Keywor__IdCor__412EB0B6">
+    <AssociationSet Name="FK__TB_Keywor__IdCor__4316F928" Association="Self.FK__TB_Keywor__IdCor__4316F928">
       <End Role="TB_Core" EntitySet="TB_Core" />
       <End Role="TB_Keyword" EntitySet="TB_Keyword" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Photo__IdCont__182C9B23" Association="Self.FK__TB_Photo__IdCont__182C9B23">
+    <AssociationSet Name="FK__TB_Photo__IdCont__1920BF5C" Association="Self.FK__TB_Photo__IdCont__1920BF5C">
       <End Role="TB_Content" EntitySet="TB_Content" />
       <End Role="TB_Photo" EntitySet="TB_Photo" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Text__IdConte__15502E78" Association="Self.FK__TB_Text__IdConte__15502E78">
+    <AssociationSet Name="FK__TB_Text__IdConte__164452B1" Association="Self.FK__TB_Text__IdConte__164452B1">
       <End Role="TB_Content" EntitySet="TB_Content" />
       <End Role="TB_Text" EntitySet="TB_Text" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_UserAd__IdAdd__398D8EEE" Association="Self.FK__TB_UserAd__IdAdd__398D8EEE">
+    <AssociationSet Name="FK__TB_UserAd__IdAdd__3B75D760" Association="Self.FK__TB_UserAd__IdAdd__3B75D760">
       <End Role="TB_AdditionalData" EntitySet="TB_AdditionalData" />
       <End Role="TB_UserAdditionalData" EntitySet="TB_UserAdditionalData" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_UserAd__IdUse__3A81B327" Association="Self.FK__TB_UserAd__IdUse__3A81B327">
+    <AssociationSet Name="FK__TB_UserAd__IdUse__3C69FB99" Association="Self.FK__TB_UserAd__IdUse__3C69FB99">
       <End Role="TB_User" EntitySet="TB_User" />
       <End Role="TB_UserAdditionalData" EntitySet="TB_UserAdditionalData" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_UserNo__IdNot__25869641" Association="Self.FK__TB_UserNo__IdNot__25869641">
+    <AssociationSet Name="FK__TB_UserNo__IdNot__276EDEB3" Association="Self.FK__TB_UserNo__IdNot__276EDEB3">
       <End Role="TB_Notification" EntitySet="TB_Notification" />
       <End Role="TB_UserNotification" EntitySet="TB_UserNotification" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_UserNo__IdUse__267ABA7A" Association="Self.FK__TB_UserNo__IdUse__267ABA7A">
+    <AssociationSet Name="FK__TB_UserNo__IdUse__286302EC" Association="Self.FK__TB_UserNo__IdUse__286302EC">
       <End Role="TB_User" EntitySet="TB_User" />
       <End Role="TB_UserNotification" EntitySet="TB_UserNotification" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Video__IdCont__1B0907CE" Association="Self.FK__TB_Video__IdCont__1B0907CE">
+    <AssociationSet Name="FK__TB_Video__IdCont__1BFD2C07" Association="Self.FK__TB_Video__IdCont__1BFD2C07">
       <End Role="TB_Content" EntitySet="TB_Content" />
       <End Role="TB_Video" EntitySet="TB_Video" />
     </AssociationSet>

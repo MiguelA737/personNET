@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="PersonNETModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="PERSONNETModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Assoc_Core_Content">
     <Key>
       <PropertyRef Name="IdAssoc" />
@@ -7,8 +7,8 @@
     <Property Name="IdAssoc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdCore" Type="Int32" Nullable="false" />
     <Property Name="IdContent" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="TB_Content" Relationship="Self.FK__Assoc_Cor__IdCon__30F848ED" FromRole="Assoc_Core_Content" ToRole="TB_Content" />
-    <NavigationProperty Name="TB_Core" Relationship="Self.FK__Assoc_Cor__IdCor__300424B4" FromRole="Assoc_Core_Content" ToRole="TB_Core" />
+    <NavigationProperty Name="TB_Content" Relationship="Self.FK__Assoc_Cor__IdCon__32E0915F" FromRole="Assoc_Core_Content" ToRole="TB_Content" />
+    <NavigationProperty Name="TB_Core" Relationship="Self.FK__Assoc_Cor__IdCor__31EC6D26" FromRole="Assoc_Core_Content" ToRole="TB_Core" />
   </EntityType>
   <EntityType Name="Content_Access_Denial">
     <Key>
@@ -17,8 +17,8 @@
     <Property Name="IdAccessDenial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdUser" Type="Int32" Nullable="false" />
     <Property Name="IdContent" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="TB_Content" Relationship="Self.FK__Content_A__IdCon__1ED998B2" FromRole="Content_Access_Denial" ToRole="TB_Content" />
-    <NavigationProperty Name="TB_User" Relationship="Self.FK__Content_A__IdUse__1DE57479" FromRole="Content_Access_Denial" ToRole="TB_User" />
+    <NavigationProperty Name="TB_Content" Relationship="Self.FK__Content_A__IdCon__1FCDBCEB" FromRole="Content_Access_Denial" ToRole="TB_Content" />
+    <NavigationProperty Name="TB_User" Relationship="Self.FK__Content_A__IdUse__1ED998B2" FromRole="Content_Access_Denial" ToRole="TB_User" />
   </EntityType>
   <EntityType Name="Core_Access_Denial">
     <Key>
@@ -27,8 +27,8 @@
     <Property Name="IdAccessDenial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdUser" Type="Int32" Nullable="false" />
     <Property Name="IdCore" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="TB_Core" Relationship="Self.FK__Core_Acce__IdCor__34C8D9D1" FromRole="Core_Access_Denial" ToRole="TB_Core" />
-    <NavigationProperty Name="TB_User" Relationship="Self.FK__Core_Acce__IdUse__33D4B598" FromRole="Core_Access_Denial" ToRole="TB_User" />
+    <NavigationProperty Name="TB_Core" Relationship="Self.FK__Core_Acce__IdCor__36B12243" FromRole="Core_Access_Denial" ToRole="TB_Core" />
+    <NavigationProperty Name="TB_User" Relationship="Self.FK__Core_Acce__IdUse__35BCFE0A" FromRole="Core_Access_Denial" ToRole="TB_User" />
   </EntityType>
   <EntityType Name="TB_AdditionalData">
     <Key>
@@ -61,12 +61,12 @@
     <Property Name="UploadDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="ContentViews" Type="Int32" Nullable="false" />
     <Property Name="IdUser" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Assoc_Core_Content" Relationship="Self.FK__Assoc_Cor__IdCon__30F848ED" FromRole="TB_Content" ToRole="Assoc_Core_Content" />
-    <NavigationProperty Name="Content_Access_Denial" Relationship="Self.FK__Content_A__IdCon__1ED998B2" FromRole="TB_Content" ToRole="Content_Access_Denial" />
-    <NavigationProperty Name="TB_User" Relationship="Self.FK__TB_Conten__IdUse__1273C1CD" FromRole="TB_Content" ToRole="TB_User" />
-    <NavigationProperty Name="TB_Photo" Relationship="Self.FK__TB_Photo__IdCont__182C9B23" FromRole="TB_Content" ToRole="TB_Photo" />
-    <NavigationProperty Name="TB_Text" Relationship="Self.FK__TB_Text__IdConte__15502E78" FromRole="TB_Content" ToRole="TB_Text" />
-    <NavigationProperty Name="TB_Video" Relationship="Self.FK__TB_Video__IdCont__1B0907CE" FromRole="TB_Content" ToRole="TB_Video" />
+    <NavigationProperty Name="Assoc_Core_Content" Relationship="Self.FK__Assoc_Cor__IdCon__32E0915F" FromRole="TB_Content" ToRole="Assoc_Core_Content" />
+    <NavigationProperty Name="Content_Access_Denial" Relationship="Self.FK__Content_A__IdCon__1FCDBCEB" FromRole="TB_Content" ToRole="Content_Access_Denial" />
+    <NavigationProperty Name="TB_User" Relationship="Self.FK__TB_Conten__IdUse__1367E606" FromRole="TB_Content" ToRole="TB_User" />
+    <NavigationProperty Name="TB_Photo" Relationship="Self.FK__TB_Photo__IdCont__1920BF5C" FromRole="TB_Content" ToRole="TB_Photo" />
+    <NavigationProperty Name="TB_Text" Relationship="Self.FK__TB_Text__IdConte__164452B1" FromRole="TB_Content" ToRole="TB_Text" />
+    <NavigationProperty Name="TB_Video" Relationship="Self.FK__TB_Video__IdCont__1BFD2C07" FromRole="TB_Content" ToRole="TB_Video" />
   </EntityType>
   <EntityType Name="TB_Core">
     <Key>
@@ -76,11 +76,11 @@
     <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
     <Property Name="IdUser" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Assoc_Core_Content" Relationship="Self.FK__Assoc_Cor__IdCor__300424B4" FromRole="TB_Core" ToRole="Assoc_Core_Content" />
-    <NavigationProperty Name="Core_Access_Denial" Relationship="Self.FK__Core_Acce__IdCor__34C8D9D1" FromRole="TB_Core" ToRole="Core_Access_Denial" />
-    <NavigationProperty Name="TB_User" Relationship="Self.FK__TB_Core__IdUser__2D27B809" FromRole="TB_Core" ToRole="TB_User" />
-    <NavigationProperty Name="TB_Genre" Relationship="Self.FK__TB_Genre__IdCore__440B1D61" FromRole="TB_Core" ToRole="TB_Genre" />
-    <NavigationProperty Name="TB_Keyword" Relationship="Self.FK__TB_Keywor__IdCor__412EB0B6" FromRole="TB_Core" ToRole="TB_Keyword" />
+    <NavigationProperty Name="Assoc_Core_Content" Relationship="Self.FK__Assoc_Cor__IdCor__31EC6D26" FromRole="TB_Core" ToRole="Assoc_Core_Content" />
+    <NavigationProperty Name="Core_Access_Denial" Relationship="Self.FK__Core_Acce__IdCor__36B12243" FromRole="TB_Core" ToRole="Core_Access_Denial" />
+    <NavigationProperty Name="TB_User" Relationship="Self.FK__TB_Core__IdUser__2F10007B" FromRole="TB_Core" ToRole="TB_User" />
+    <NavigationProperty Name="TB_Genre" Relationship="Self.FK__TB_Genre__IdCore__45F365D3" FromRole="TB_Core" ToRole="TB_Genre" />
+    <NavigationProperty Name="TB_Keyword" Relationship="Self.FK__TB_Keywor__IdCor__4316F928" FromRole="TB_Core" ToRole="TB_Keyword" />
     <NavigationProperty Name="TB_AdditionalData" Relationship="Self.TB_CoreAdditionalData" FromRole="TB_Core" ToRole="TB_AdditionalData" />
   </EntityType>
   <EntityType Name="TB_Genre">
@@ -90,7 +90,7 @@
     <Property Name="IdGenre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdCore" Type="Int32" Nullable="false" />
     <Property Name="GenreContent" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="TB_Core" Relationship="Self.FK__TB_Genre__IdCore__440B1D61" FromRole="TB_Genre" ToRole="TB_Core" />
+    <NavigationProperty Name="TB_Core" Relationship="Self.FK__TB_Genre__IdCore__45F365D3" FromRole="TB_Genre" ToRole="TB_Core" />
   </EntityType>
   <EntityType Name="TB_Keyword">
     <Key>
@@ -99,7 +99,7 @@
     <Property Name="IdKeyword" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdCore" Type="Int32" Nullable="false" />
     <Property Name="KeywordContent" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="TB_Core" Relationship="Self.FK__TB_Keywor__IdCor__412EB0B6" FromRole="TB_Keyword" ToRole="TB_Core" />
+    <NavigationProperty Name="TB_Core" Relationship="Self.FK__TB_Keywor__IdCor__4316F928" FromRole="TB_Keyword" ToRole="TB_Core" />
   </EntityType>
   <EntityType Name="TB_Notification">
     <Key>
@@ -116,7 +116,7 @@
     </Key>
     <Property Name="IdContent" Type="Int32" Nullable="false" />
     <Property Name="DirPhoto" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Photo__IdCont__182C9B23" FromRole="TB_Photo" ToRole="TB_Content" />
+    <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Photo__IdCont__1920BF5C" FromRole="TB_Photo" ToRole="TB_Content" />
   </EntityType>
   <EntityType Name="TB_Text">
     <Key>
@@ -124,7 +124,7 @@
     </Key>
     <Property Name="IdContent" Type="Int32" Nullable="false" />
     <Property Name="ContentText" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Text__IdConte__15502E78" FromRole="TB_Text" ToRole="TB_Content" />
+    <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Text__IdConte__164452B1" FromRole="TB_Text" ToRole="TB_Content" />
   </EntityType>
   <EntityType Name="TB_User">
     <Key>
@@ -138,10 +138,10 @@
     <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="LastAccess" Type="DateTime" Precision="3" />
     <Property Name="HasPremiumAccess" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Content_Access_Denial" Relationship="Self.FK__Content_A__IdUse__1DE57479" FromRole="TB_User" ToRole="Content_Access_Denial" />
-    <NavigationProperty Name="Core_Access_Denial" Relationship="Self.FK__Core_Acce__IdUse__33D4B598" FromRole="TB_User" ToRole="Core_Access_Denial" />
-    <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Conten__IdUse__1273C1CD" FromRole="TB_User" ToRole="TB_Content" />
-    <NavigationProperty Name="TB_Core" Relationship="Self.FK__TB_Core__IdUser__2D27B809" FromRole="TB_User" ToRole="TB_Core" />
+    <NavigationProperty Name="Content_Access_Denial" Relationship="Self.FK__Content_A__IdUse__1ED998B2" FromRole="TB_User" ToRole="Content_Access_Denial" />
+    <NavigationProperty Name="Core_Access_Denial" Relationship="Self.FK__Core_Acce__IdUse__35BCFE0A" FromRole="TB_User" ToRole="Core_Access_Denial" />
+    <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Conten__IdUse__1367E606" FromRole="TB_User" ToRole="TB_Content" />
+    <NavigationProperty Name="TB_Core" Relationship="Self.FK__TB_Core__IdUser__2F10007B" FromRole="TB_User" ToRole="TB_Core" />
     <NavigationProperty Name="TB_AdditionalData" Relationship="Self.TB_UserAdditionalData" FromRole="TB_User" ToRole="TB_AdditionalData" />
     <NavigationProperty Name="TB_Notification" Relationship="Self.TB_UserNotification" FromRole="TB_User" ToRole="TB_Notification" />
   </EntityType>
@@ -151,9 +151,9 @@
     </Key>
     <Property Name="IdContent" Type="Int32" Nullable="false" />
     <Property Name="DirVideo" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Video__IdCont__1B0907CE" FromRole="TB_Video" ToRole="TB_Content" />
+    <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Video__IdCont__1BFD2C07" FromRole="TB_Video" ToRole="TB_Content" />
   </EntityType>
-  <Association Name="FK__Assoc_Cor__IdCon__30F848ED">
+  <Association Name="FK__Assoc_Cor__IdCon__32E0915F">
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
     <End Role="Assoc_Core_Content" Type="Self.Assoc_Core_Content" Multiplicity="*" />
     <ReferentialConstraint>
@@ -165,7 +165,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Assoc_Cor__IdCor__300424B4">
+  <Association Name="FK__Assoc_Cor__IdCor__31EC6D26">
     <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
     <End Role="Assoc_Core_Content" Type="Self.Assoc_Core_Content" Multiplicity="*" />
     <ReferentialConstraint>
@@ -177,7 +177,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Content_A__IdCon__1ED998B2">
+  <Association Name="FK__Content_A__IdCon__1FCDBCEB">
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
     <End Role="Content_Access_Denial" Type="Self.Content_Access_Denial" Multiplicity="*" />
     <ReferentialConstraint>
@@ -189,7 +189,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Content_A__IdUse__1DE57479">
+  <Association Name="FK__Content_A__IdUse__1ED998B2">
     <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
     <End Role="Content_Access_Denial" Type="Self.Content_Access_Denial" Multiplicity="*" />
     <ReferentialConstraint>
@@ -201,7 +201,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Core_Acce__IdCor__34C8D9D1">
+  <Association Name="FK__Core_Acce__IdCor__36B12243">
     <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
     <End Role="Core_Access_Denial" Type="Self.Core_Access_Denial" Multiplicity="*" />
     <ReferentialConstraint>
@@ -213,7 +213,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Core_Acce__IdUse__33D4B598">
+  <Association Name="FK__Core_Acce__IdUse__35BCFE0A">
     <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
     <End Role="Core_Access_Denial" Type="Self.Core_Access_Denial" Multiplicity="*" />
     <ReferentialConstraint>
@@ -225,7 +225,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Conten__IdUse__1273C1CD">
+  <Association Name="FK__TB_Conten__IdUse__1367E606">
     <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="*" />
     <ReferentialConstraint>
@@ -237,7 +237,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Photo__IdCont__182C9B23">
+  <Association Name="FK__TB_Photo__IdCont__1920BF5C">
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
     <End Role="TB_Photo" Type="Self.TB_Photo" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -249,7 +249,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Text__IdConte__15502E78">
+  <Association Name="FK__TB_Text__IdConte__164452B1">
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
     <End Role="TB_Text" Type="Self.TB_Text" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -261,7 +261,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Video__IdCont__1B0907CE">
+  <Association Name="FK__TB_Video__IdCont__1BFD2C07">
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
     <End Role="TB_Video" Type="Self.TB_Video" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -273,7 +273,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Core__IdUser__2D27B809">
+  <Association Name="FK__TB_Core__IdUser__2F10007B">
     <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
     <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="*" />
     <ReferentialConstraint>
@@ -285,7 +285,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Genre__IdCore__440B1D61">
+  <Association Name="FK__TB_Genre__IdCore__45F365D3">
     <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
     <End Role="TB_Genre" Type="Self.TB_Genre" Multiplicity="*" />
     <ReferentialConstraint>
@@ -297,7 +297,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TB_Keywor__IdCor__412EB0B6">
+  <Association Name="FK__TB_Keywor__IdCor__4316F928">
     <End Role="TB_Core" Type="Self.TB_Core" Multiplicity="1" />
     <End Role="TB_Keyword" Type="Self.TB_Keyword" Multiplicity="*" />
     <ReferentialConstraint>
@@ -340,55 +340,55 @@
     <EntitySet Name="TB_Text" EntityType="Self.TB_Text" />
     <EntitySet Name="TB_User" EntityType="Self.TB_User" />
     <EntitySet Name="TB_Video" EntityType="Self.TB_Video" />
-    <AssociationSet Name="FK__Assoc_Cor__IdCon__30F848ED" Association="Self.FK__Assoc_Cor__IdCon__30F848ED">
+    <AssociationSet Name="FK__Assoc_Cor__IdCon__32E0915F" Association="Self.FK__Assoc_Cor__IdCon__32E0915F">
       <End Role="TB_Content" EntitySet="TB_Content" />
       <End Role="Assoc_Core_Content" EntitySet="Assoc_Core_Content" />
     </AssociationSet>
-    <AssociationSet Name="FK__Assoc_Cor__IdCor__300424B4" Association="Self.FK__Assoc_Cor__IdCor__300424B4">
+    <AssociationSet Name="FK__Assoc_Cor__IdCor__31EC6D26" Association="Self.FK__Assoc_Cor__IdCor__31EC6D26">
       <End Role="TB_Core" EntitySet="TB_Core" />
       <End Role="Assoc_Core_Content" EntitySet="Assoc_Core_Content" />
     </AssociationSet>
-    <AssociationSet Name="FK__Content_A__IdCon__1ED998B2" Association="Self.FK__Content_A__IdCon__1ED998B2">
+    <AssociationSet Name="FK__Content_A__IdCon__1FCDBCEB" Association="Self.FK__Content_A__IdCon__1FCDBCEB">
       <End Role="TB_Content" EntitySet="TB_Content" />
       <End Role="Content_Access_Denial" EntitySet="Content_Access_Denial" />
     </AssociationSet>
-    <AssociationSet Name="FK__Content_A__IdUse__1DE57479" Association="Self.FK__Content_A__IdUse__1DE57479">
+    <AssociationSet Name="FK__Content_A__IdUse__1ED998B2" Association="Self.FK__Content_A__IdUse__1ED998B2">
       <End Role="TB_User" EntitySet="TB_User" />
       <End Role="Content_Access_Denial" EntitySet="Content_Access_Denial" />
     </AssociationSet>
-    <AssociationSet Name="FK__Core_Acce__IdCor__34C8D9D1" Association="Self.FK__Core_Acce__IdCor__34C8D9D1">
+    <AssociationSet Name="FK__Core_Acce__IdCor__36B12243" Association="Self.FK__Core_Acce__IdCor__36B12243">
       <End Role="TB_Core" EntitySet="TB_Core" />
       <End Role="Core_Access_Denial" EntitySet="Core_Access_Denial" />
     </AssociationSet>
-    <AssociationSet Name="FK__Core_Acce__IdUse__33D4B598" Association="Self.FK__Core_Acce__IdUse__33D4B598">
+    <AssociationSet Name="FK__Core_Acce__IdUse__35BCFE0A" Association="Self.FK__Core_Acce__IdUse__35BCFE0A">
       <End Role="TB_User" EntitySet="TB_User" />
       <End Role="Core_Access_Denial" EntitySet="Core_Access_Denial" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Conten__IdUse__1273C1CD" Association="Self.FK__TB_Conten__IdUse__1273C1CD">
+    <AssociationSet Name="FK__TB_Conten__IdUse__1367E606" Association="Self.FK__TB_Conten__IdUse__1367E606">
       <End Role="TB_User" EntitySet="TB_User" />
       <End Role="TB_Content" EntitySet="TB_Content" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Photo__IdCont__182C9B23" Association="Self.FK__TB_Photo__IdCont__182C9B23">
+    <AssociationSet Name="FK__TB_Photo__IdCont__1920BF5C" Association="Self.FK__TB_Photo__IdCont__1920BF5C">
       <End Role="TB_Content" EntitySet="TB_Content" />
       <End Role="TB_Photo" EntitySet="TB_Photo" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Text__IdConte__15502E78" Association="Self.FK__TB_Text__IdConte__15502E78">
+    <AssociationSet Name="FK__TB_Text__IdConte__164452B1" Association="Self.FK__TB_Text__IdConte__164452B1">
       <End Role="TB_Content" EntitySet="TB_Content" />
       <End Role="TB_Text" EntitySet="TB_Text" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Video__IdCont__1B0907CE" Association="Self.FK__TB_Video__IdCont__1B0907CE">
+    <AssociationSet Name="FK__TB_Video__IdCont__1BFD2C07" Association="Self.FK__TB_Video__IdCont__1BFD2C07">
       <End Role="TB_Content" EntitySet="TB_Content" />
       <End Role="TB_Video" EntitySet="TB_Video" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Core__IdUser__2D27B809" Association="Self.FK__TB_Core__IdUser__2D27B809">
+    <AssociationSet Name="FK__TB_Core__IdUser__2F10007B" Association="Self.FK__TB_Core__IdUser__2F10007B">
       <End Role="TB_User" EntitySet="TB_User" />
       <End Role="TB_Core" EntitySet="TB_Core" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Genre__IdCore__440B1D61" Association="Self.FK__TB_Genre__IdCore__440B1D61">
+    <AssociationSet Name="FK__TB_Genre__IdCore__45F365D3" Association="Self.FK__TB_Genre__IdCore__45F365D3">
       <End Role="TB_Core" EntitySet="TB_Core" />
       <End Role="TB_Genre" EntitySet="TB_Genre" />
     </AssociationSet>
-    <AssociationSet Name="FK__TB_Keywor__IdCor__412EB0B6" Association="Self.FK__TB_Keywor__IdCor__412EB0B6">
+    <AssociationSet Name="FK__TB_Keywor__IdCor__4316F928" Association="Self.FK__TB_Keywor__IdCor__4316F928">
       <End Role="TB_Core" EntitySet="TB_Core" />
       <End Role="TB_Keyword" EntitySet="TB_Keyword" />
     </AssociationSet>

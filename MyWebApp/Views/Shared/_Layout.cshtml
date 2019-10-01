@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="header">
-        <img id="logo" alt="Person.NET" src="@Url.Content("~/img/Fundo.png")" />
+        <a href="@Url.Action("Index", "Home")"><img id="logo" alt="Person.NET" src="@Url.Content("~/img/Fundo.png")" /></a>
     </div>
 
     <div class="topnav">
@@ -21,15 +21,15 @@
             <input type="text" placeholder="Buscar..." />
             <button class="btnBusca">Buscar</button>
         </div>
-        <a href="#">Perfil</a>
-        <a href="#" style="float:right">Opções</a>
+        <a style="float: right;" href="../TB_User/Login">Entrar</a>
+        <a style="float: right;" href="../TB_User/Create">Criar Conta</a>
 
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Person.NET</p>
         </footer>
     </div>
 

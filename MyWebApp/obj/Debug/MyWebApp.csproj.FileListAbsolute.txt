@@ -332,3 +332,4 @@ C:\Users\IFSP\Desktop\personNET\personNET\MyWebApp\obj\Debug\MyWebApp.csproj.Cor
 C:\Users\IFSP\Desktop\personNET\personNET\MyWebApp\obj\Debug\MyWebApp.csproj.CopyComplete
 C:\Users\IFSP\Desktop\personNET\personNET\MyWebApp\obj\Debug\MyWebApp.dll
 C:\Users\IFSP\Desktop\personNET\personNET\MyWebApp\obj\Debug\MyWebApp.pdb
+C:\Users\IFSP\Desktop\personNET\personNET\MyWebApp\obj\Debug\MyWebApp.csprojAssemblyReference.cache

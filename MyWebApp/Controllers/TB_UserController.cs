@@ -118,7 +118,6 @@ namespace MyWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                tB_User.Pass = "" + tB_User.Pass.GetHashCode();
                 db.Entry(tB_User).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

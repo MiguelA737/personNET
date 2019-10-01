@@ -289,11 +289,6 @@
     <Content Include="Views\TB_AdditionalData\Details.cshtml" />
     <Content Include="Views\TB_AdditionalData\Edit.cshtml" />
     <Content Include="Views\TB_AdditionalData\Index.cshtml" />
-    <Content Include="Views\TB_Admin\Create.cshtml" />
-    <Content Include="Views\TB_Admin\Delete.cshtml" />
-    <Content Include="Views\TB_Admin\Details.cshtml" />
-    <Content Include="Views\TB_Admin\Edit.cshtml" />
-    <Content Include="Views\TB_Admin\Index.cshtml" />
     <Content Include="Views\TB_Content\Create.cshtml" />
     <Content Include="Views\TB_Content\Delete.cshtml" />
     <Content Include="Views\TB_Content\Details.cshtml" />
@@ -329,16 +324,21 @@
     <Content Include="Views\TB_Text\Details.cshtml" />
     <Content Include="Views\TB_Text\Edit.cshtml" />
     <Content Include="Views\TB_Text\Index.cshtml" />
-    <Content Include="Views\TB_User\Create.cshtml" />
-    <Content Include="Views\TB_User\Delete.cshtml" />
-    <Content Include="Views\TB_User\Details.cshtml" />
-    <Content Include="Views\TB_User\Edit.cshtml" />
-    <Content Include="Views\TB_User\Index.cshtml" />
     <Content Include="Views\TB_Video\Create.cshtml" />
     <Content Include="Views\TB_Video\Delete.cshtml" />
     <Content Include="Views\TB_Video\Details.cshtml" />
     <Content Include="Views\TB_Video\Edit.cshtml" />
     <Content Include="Views\TB_Video\Index.cshtml" />
+    <Content Include="Views\TB_Admin\Create.cshtml" />
+    <Content Include="Views\TB_Admin\Delete.cshtml" />
+    <Content Include="Views\TB_Admin\Details.cshtml" />
+    <Content Include="Views\TB_Admin\Edit.cshtml" />
+    <Content Include="Views\TB_Admin\Index.cshtml" />
+    <Content Include="Views\TB_User\Create.cshtml" />
+    <Content Include="Views\TB_User\Delete.cshtml" />
+    <Content Include="Views\TB_User\Details.cshtml" />
+    <Content Include="Views\TB_User\Edit.cshtml" />
+    <Content Include="Views\TB_User\Index.cshtml" />
     <Content Include="Views\TB_User\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
