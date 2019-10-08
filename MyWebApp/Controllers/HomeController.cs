@@ -20,7 +20,13 @@ namespace MyWebApp.Controllers
             return View();
         }
 
-        public ActionResult About()
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+            public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 

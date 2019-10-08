@@ -48,46 +48,9 @@ namespace MyWebApp.Controllers
             if (ModelState.IsValid)
             {
                 tB_User.Pass = "" + tB_User.Pass.GetHashCode();
+                tB_User.E_mail = "" + tB_User.E_mail.GetHashCode();
                 db.TB_User.Add(tB_User);
                 db.SaveChanges();
-                HttpCookie cookie = Request.Cookies["user"];
-                if (cookie == null)
-                {
-                    cookie = new HttpCookie("user");
-                    cookie.Values.Add("id", "" + tB_User.IdUser);
-                    cookie.Values.Add("pass", tB_User.Pass);
-                    cookie.Expires = DateTime.Now.AddDays(365);
-                    cookie.HttpOnly = true;
-                    Response.AppendCookie(cookie);
-                }
-                else cookie.Expires = DateTime.Now;
-                return RedirectPermanent("../Home/Index");
-            }
-
-            return View(tB_User);
-        }
-
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Login([Bind(Include = "IdUser,Name,E_mail,Pass,DirProfilePhoto,BirthDate,LastAccess,HasPremiumAccess")] TB_User tB_User)
-        {
-            TB_User user = db.TB_User.ToList().Find(x => x.E_mail.Equals(tB_User.E_mail));
-            if (user != null && user.Pass.Equals(tB_User.Pass))
-            {
-                HttpCookie cookie = Request.Cookies["user"];
-                if (cookie == null)
-                {
-                    cookie = new HttpCookie("user");
-                    cookie.Values.Add("id", "" + tB_User.IdUser);
-                    cookie.Values.Add("pass", tB_User.Pass);
-                    cookie.HttpOnly = true;
-                    Response.AppendCookie(cookie);
-                }
                 return RedirectPermanent("../Home/Index");
             }
 
@@ -118,6 +81,8 @@ namespace MyWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                tB_User.Pass = "" + tB_User.Pass.GetHashCode();
+                tB_User.E_mail = "" + tB_User.E_mail.GetHashCode();
                 db.Entry(tB_User).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

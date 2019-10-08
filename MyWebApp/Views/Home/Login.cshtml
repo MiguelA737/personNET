@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Person.NET - @ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+    <style>
+        body {padding-top: 60px;}
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.ActionLink("Página Principal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="alert alert-success">
+            <div class="container">
+                <div>
+                    <form id="form-login" name="form-login" method="get" action="javascript:function()">
+                        <p>
+                            <label for="txtEmail">E-mail</label>&nbsp;
+                            <input type="email" id="txtEmail" name="txtEmail" />
+                        </p>
+                        <p>
+                            <label for="txtPass">Senha</label>&nbsp;
+                            <input type="password" id="txtPass" name="txtPass" />&nbsp;
+                        </p>
+                        <p>
+                            <label for="chkpersist">Permanecer Logado</label>&nbsp;
+                            <input type="checkbox" id="chkpersist" name="chkpersist" />&nbsp;
+                        </p>
+                        <p><a id="btn-enter" class="btn btn-success">Entrar</a></p>
+                    </form><br />
+                    <label id="status" class="alert alert-warning"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/Authentication.js")"></script>
+</body>
+</html>
