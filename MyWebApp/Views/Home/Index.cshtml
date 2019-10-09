@@ -1,8 +1,24 @@
 ﻿@{
     ViewBag.Title = "person.NET";
 }
+<div onload="cookie()"></div>
 <link rel="stylesheet" type="text/css" href="~/css/StyleSheet1.css">
 <div class="card">
     <br>
     <p>@ViewBag.Message</p>
 </div>
+
+<script>
+    function cookie() {
+
+
+
+        if (@ViewBag.Cookie) {
+            var btnlist = document.getElementsByClassName("btn-login");
+            for (var i in btnlist) {
+                i.setAttribute("display", "none");
+            }
+        }
+
+    }
+</script>

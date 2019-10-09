@@ -45,15 +45,17 @@ namespace MyWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IdUser,Name,E_mail,Pass,DirProfilePhoto,BirthDate,LastAccess,HasPremiumAccess")] TB_User tB_User)
         {
-            if (ModelState.IsValid)
+            if (db.TB_User.ToList().Find(x => x.E_mail.Equals("" + tB_User.E_mail.GetHashCode())) == null)
             {
-                tB_User.Pass = "" + tB_User.Pass.GetHashCode();
-                tB_User.E_mail = "" + tB_User.E_mail.GetHashCode();
-                db.TB_User.Add(tB_User);
-                db.SaveChanges();
-                return RedirectPermanent("../Home/Index");
+                if (ModelState.IsValid)
+                {
+                    tB_User.Pass = "" + tB_User.Pass.GetHashCode();
+                    tB_User.E_mail = "" + tB_User.E_mail.GetHashCode();
+                    db.TB_User.Add(tB_User);
+                    db.SaveChanges();
+                    return RedirectPermanent("../Home/Index");
+                }
             }
-
             return View(tB_User);
         }
 
@@ -88,6 +90,7 @@ namespace MyWebApp.Controllers
                 return RedirectToAction("Index");
             }
             return View(tB_User);
+
         }
 
         // GET: TB_User/Delete/5
