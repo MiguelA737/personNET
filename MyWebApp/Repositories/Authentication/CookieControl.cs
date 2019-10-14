@@ -13,6 +13,7 @@ namespace MyWebApp.Repositories.Authentication
         {
 
             HttpCookie userCookie = new HttpCookie("UC");
+            userCookie.Values["ID"] = "" + tB_User.IdUser;
             userCookie.Values["E-mail"] = "" + tB_User.E_mail;
             userCookie.Values["Pass"] = tB_User.Pass;
 
