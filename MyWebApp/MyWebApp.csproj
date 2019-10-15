@@ -139,6 +139,7 @@
     <Compile Include="Controllers\Content_Access_DenialController.cs" />
     <Compile Include="Controllers\Core_Access_DenialController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RestrictedController.cs" />
     <Compile Include="Controllers\TB_AdditionalDataController.cs" />
     <Compile Include="Controllers\TB_AdminController.cs" />
     <Compile Include="Controllers\TB_ContentController.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Controllers\TB_TextController.cs" />
     <Compile Include="Controllers\TB_UserController.cs" />
     <Compile Include="Controllers\TB_VideoController.cs" />
+    <Compile Include="Filters\AccessFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -345,6 +347,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Restricted\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

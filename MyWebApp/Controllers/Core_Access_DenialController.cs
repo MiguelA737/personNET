@@ -10,7 +10,7 @@ using MyWebApp.Models;
 
 namespace MyWebApp.Controllers
 {
-    public class Core_Access_DenialController : Controller
+    public class Core_Access_DenialController : RestrictedController
     {
         private personNETEntities db = new personNETEntities();
 

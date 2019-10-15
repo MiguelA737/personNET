@@ -10,7 +10,7 @@ using MyWebApp.Models;
 
 namespace MyWebApp.Controllers
 {
-    public class TB_VideoController : Controller
+    public class TB_VideoController : RestrictedController
     {
         private personNETEntities db = new personNETEntities();
 

@@ -10,7 +10,7 @@ using MyWebApp.Models;
 
 namespace MyWebApp.Controllers
 {
-    public class TB_NotificationController : Controller
+    public class TB_NotificationController : RestrictedController
     {
         private personNETEntities db = new personNETEntities();
 

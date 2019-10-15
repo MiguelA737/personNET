@@ -16,5 +16,19 @@ namespace MyWebApp.Controllers
             else
                 return Json(new { OK = false, Mensagem = "Usuário não encontrado." }, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult DeauthenticateUser()
+        {
+            if (CookieControl.DeleteCookie())
+                return Json(new { OK = true }, JsonRequestBehavior.AllowGet);
+            else return Json(new { OK = false }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult VerifyAuthentication()
+        {
+            if (UserControl.VerifyUserStatus() != null)
+                return Json(new { OK = true }, JsonRequestBehavior.AllowGet);
+            else return Json(new { OK = false }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

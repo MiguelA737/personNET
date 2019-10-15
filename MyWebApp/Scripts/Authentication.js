@@ -27,4 +27,33 @@
             }
         });
     });
+
+    $("#btn-logout").click(function () {
+        $.ajax({
+            url: "/Authentication/DeauthenticateUser",
+            dataType: "json",
+            type: "POST",
+            async: true,
+            success: function (dados) {
+                if (dados.OK)
+                    window.location.href = "/Home";
+            }
+        });
+    });
+
+    $.ajax({
+        url: "/Authentication/VerifyAuthentication",
+        dataType: "json",
+        type: "POST",
+        async: true,
+        success: function (dados) {
+            if (dados.OK) {
+                $("#btn-logout").show();
+
+            }
+            else {
+                $("#btn-logout").hide();
+            }
+        }
+    });
 });

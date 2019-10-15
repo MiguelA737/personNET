@@ -23,5 +23,19 @@ namespace MyWebApp.Repositories.Authentication
 
         }
 
+        public static bool DeleteCookie()
+        {
+
+            HttpCookie userCookie = HttpContext.Current.Request.Cookies["UC"];
+
+            if (userCookie == null) return false;
+            else
+            {
+                HttpContext.Current.Response.Cookies[userCookie.Name].Expires = DateTime.Now.AddDays(-1);
+                return true;
+            }
+
+        }
+
     }
 }

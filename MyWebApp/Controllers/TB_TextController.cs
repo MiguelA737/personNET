@@ -10,7 +10,7 @@ using MyWebApp.Models;
 
 namespace MyWebApp.Controllers
 {
-    public class TB_TextController : Controller
+    public class TB_TextController : RestrictedController
     {
         private personNETEntities db = new personNETEntities();
 

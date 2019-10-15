@@ -14,14 +14,14 @@ namespace MyWebApp.Repositories.Authentication
             try
             {
                 personNETEntities db = new personNETEntities();
-                var usuario = db.TB_User.Where(x => x.E_mail.Equals(email) && x.Pass.Equals(pass)).SingleOrDefault();
-                if(usuario == null)
+                var user = db.TB_User.Where(x => x.E_mail.Equals(email) && x.Pass.Equals(pass)).SingleOrDefault();
+                if(user == null)
                 {
                     return false;
                 }
                 else
                 {
-                    CookieControl.CreateCookie(usuario, persist);
+                    CookieControl.CreateCookie(user, persist);
                     return true;
                 }
             }
@@ -29,6 +29,34 @@ namespace MyWebApp.Repositories.Authentication
             {
                 return false;
             }
+        }
+
+        public static TB_User RecoverUser(int id)
+        {
+            try
+            {
+                personNETEntities db = new personNETEntities();
+                var user = db.TB_User.Where(x => x.IdUser == id).SingleOrDefault();
+                return user;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public static TB_User VerifyUserStatus()
+        {
+            HttpCookie cookie = HttpContext.Current.Request.Cookies["UC"];
+
+            if (cookie == null) return null;
+            else
+            {
+                int idUser = Convert.ToInt32(cookie.Values["ID"]);
+                var user = RecoverUser(idUser);
+                return user;
+            }
+
         }
 
     }
