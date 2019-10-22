@@ -151,6 +151,7 @@
     <Compile Include="Controllers\TB_TextController.cs" />
     <Compile Include="Controllers\TB_UserController.cs" />
     <Compile Include="Controllers\TB_VideoController.cs" />
+    <Compile Include="Controllers\UserSignupController.cs" />
     <Compile Include="Filters\AccessFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -344,6 +345,7 @@
     <Content Include="Views\TB_User\Edit.cshtml" />
     <Content Include="Views\TB_User\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\UserSignup\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
