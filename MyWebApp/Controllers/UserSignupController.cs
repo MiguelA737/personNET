@@ -32,7 +32,8 @@ namespace MyWebApp.Controllers
                     tB_User.E_mail = "" + tB_User.E_mail.GetHashCode();
                     db.TB_User.Add(tB_User);
                     db.SaveChanges();
-                    return RedirectPermanent("../Home/Index");
+                    CookieControl.CreateCookie(tB_User, false);
+                    return Redirect("../MainPage/Index");
                 }
             }
             return View(tB_User);

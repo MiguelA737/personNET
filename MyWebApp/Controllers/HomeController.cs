@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyWebApp.Repositories.Authentication;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,7 @@ namespace MyWebApp.Controllers
     {
         public ActionResult Index()
         {
+            if(UserControl.VerifyUserStatus() != null) return Redirect("/MainPage/Index");
             return View();
         }
 

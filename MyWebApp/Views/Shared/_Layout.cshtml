@@ -17,13 +17,9 @@
     </div>
 
     <div class="topnav">
-        <div id="divBusca">
-            <input type="text" placeholder="Buscar..." />
-            <button class="btnBusca">Buscar</button>
-        </div>
-        <a class="btn-login" style="float: right; display: block;" href="/Home/Login">Entrar</a>
-        <a class="btn-login" style="float: right; display: block;" href="../UserSignup/Create">Criar Conta</a>
-        <a id="btn-logout" style="float: right; display: none;">Sair</a>
+        <a id="btn-login" style="float: right; display: block;" href="/Home/Login">Entrar</a>
+        <a id="btn-signup" style="float: right; display: block;" href="../UserSignup/Create">Criar Conta</a>
+        <a id="btn-logout" style="float: right; display: none;" href="">Sair</a>
     </div>
     <div class="container body-content">
         @RenderBody()

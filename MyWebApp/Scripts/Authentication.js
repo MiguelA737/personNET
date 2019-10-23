@@ -49,10 +49,14 @@
         success: function (dados) {
             if (dados.OK) {
                 $("#btn-logout").show();
+                $("#btn-login").hide();
+                $("#btn-signup").hide();
 
             }
             else {
                 $("#btn-logout").hide();
+                $("#btn-login").show();
+                $("#btn-signup").show();
             }
         }
     });
