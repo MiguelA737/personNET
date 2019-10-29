@@ -7,7 +7,6 @@ namespace MyWebApp.Models
 {
     public class Search
     {
-        public string IdNome { get; set; }
-        public string Name { get; internal set; }
+        public string Name { get; set; }
     }
 }

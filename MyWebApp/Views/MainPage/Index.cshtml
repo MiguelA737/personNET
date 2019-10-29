@@ -4,11 +4,11 @@
 <link rel="stylesheet" type="text/css" href="~/css/StyleSheet1.css">
 <div class="card">
     <div id="divBusca">
-        <input id="termoBusca" type="text" placeholder="Buscar..." />
+        <input id="name" type="text" placeholder="Buscar..." />
         <button id="pesquisar" class="btnBusca">Buscar</button>
     </div>
 </div>
-<div class="??"> @*adicionar a classe do css correta*@
+<div class="row"> @*adicionar a classe do css correta*@
     <div id="resultados"></div>
 </div>
 
@@ -18,24 +18,23 @@
         $(function () {
             $("#pesquisar").on("click", function () {
 
-                var pesquisa = {
-                    Name: $("#Name").val(),
-                    DirProfilePhoto: $("#DirProfilePhoto").val()
+                var search = {
+                    Name: $("#name").val()
                 };
 
-                $.getJSON("home/pesquisar", pesquisa, function (data) {
+                $.getJSON("/MainPage/Search", search, function (data) {
 
                     var resultados = $("#resultados");
                     resultados.empty();
 
                     if (data.length == 0) {
-                        resultados.append('<div class="??">Não há resultados.</div>'); // colocar classe css correta
+                        resultados.append('<div class="alert alert-warning">Não há resultados.</div>'); // colocar classe css correta
                         return false;
                     }
 
                     for (var i = 0; i < data.length; i++) {
 
-                        resultados.append('<div class="???"><h4><b>'+data[i].DirProfilePhoto+data[i].Nome+'</div>')
+                        resultados.append('<div class="card"><h4><b>' + data[i].Name + '</div>')
 
                     }
 
