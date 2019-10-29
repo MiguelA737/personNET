@@ -8,7 +8,7 @@
         <button id="pesquisar" class="btnBusca">Buscar</button>
     </div>
 </div>
-<div class="row"> @*adicionar a classe do css correta*@
+<div class="row">
     <div id="resultados"></div>
 </div>
 
@@ -21,14 +21,14 @@
                 var search = {
                     Name: $("#name").val()
                 };
-
+                //Chama a Action Search do Controller MainPage para obter uma lista de resultados, enviando uma Search como parâmetro
                 $.getJSON("/MainPage/Search", search, function (data) {
 
                     var resultados = $("#resultados");
                     resultados.empty();
 
                     if (data.length == 0) {
-                        resultados.append('<div class="alert alert-warning">Não há resultados.</div>'); // colocar classe css correta
+                        resultados.append('<div class="alert alert-warning">Não há resultados.</div>');
                         return false;
                     }
 

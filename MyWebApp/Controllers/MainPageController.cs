@@ -9,18 +9,19 @@ namespace MyWebApp.Controllers
 {
     public class MainPageController : RestrictedController
     {
-        private personNETEntities db = new personNETEntities(); //substituir pelo nome da classe com as entidades --me passar para revisão depois de comentar o resto do programa(vinicius)
+        private personNETEntities db = new personNETEntities(); //Classe de entidades
 
         public ActionResult Index()
         {
 
-            ViewBag.Name = new SelectList(db.TB_User, "Name", "nome"); //parametro de pesquisa para retornar baseado no nome do usuario --me passar para revisão depois de comentar o resto do programa(vinicius)
+            ViewBag.Name = new SelectList(db.TB_User, "Name", "nome"); //Lista de nomes existentes no banco (o search pesquisará nela)
 
             return View();
         }
 
-        public ActionResult Search(Search pesquisa) //metodo de pesquisa W.I.P.--me passar para revisão depois de comentar o resto do programa(vinicius)
+        public ActionResult Search(Search pesquisa) //Verifica no DB se existem usuários cujos nomes contêm o termo pesquisado
         {
+            //LINQ
             var post = from p in db.TB_User
                        where p.Name.Contains(pesquisa.Name)
                        select new SearchResult_User
