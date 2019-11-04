@@ -48,15 +48,24 @@
         async: true,
         success: function (dados) {
             if (dados.OK) {
+                console.log("hello");
+                $(".menu").each(function () {
+                    $(this).show();
+                });
                 $("#btn-logout").show();
-                $("#btn-login").hide();
-                $("#btn-signup").hide();
-
+                $(".btn-login").each(function () {
+                    $(this).hide();
+                });
+                
             }
             else {
+                $(".menu").each(function () {
+                    $(this).hide();
+                });
                 $("#btn-logout").hide();
-                $("#btn-login").show();
-                $("#btn-signup").show();
+                $(".btn-login").each(function () {
+                    $(this).show();
+                });
             }
         }
     });

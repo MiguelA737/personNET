@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MyWebApp.Models;
+using MyWebApp.Repositories.Authentication;
 
 namespace MyWebApp.Controllers
 {
@@ -50,14 +51,25 @@ namespace MyWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IdContent,ContentText")] TB_Text tB_Text)
         {
+            TB_Content tB_Content = new TB_Content();
+            tB_Content.IdContent = db.TB_Content.Count();
+            tB_Content.ContentType = "Text";
+            tB_Content.UploadDate = DateTime.Now;
+            tB_Content.ContentViews = 0;
+            tB_Content.IdUser = UserControl.VerifyUserStatus().IdUser;
+
             if (ModelState.IsValid)
             {
+                db.TB_Content.Add(tB_Content);
+
+                tB_Text.IdContent = tB_Content.IdContent;
+
                 db.TB_Text.Add(tB_Text);
+
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Redirect("../MainPage/Index");
             }
 
-            ViewBag.IdContent = new SelectList(db.TB_Content, "IdContent", "ContentType", tB_Text.IdContent);
             return View(tB_Text);
         }
 

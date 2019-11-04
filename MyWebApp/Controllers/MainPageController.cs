@@ -22,13 +22,26 @@ namespace MyWebApp.Controllers
         public ActionResult Search(Search pesquisa) //Verifica no DB se existem usuários cujos nomes contêm o termo pesquisado
         {
             //LINQ
-            var post = from p in db.TB_User
+            var users = from p in db.TB_User
                        where p.Name.Contains(pesquisa.Name)
                        select new SearchResult_User
                        {
                            Name = p.Name,
+                           Type = "User",
                            DirProfilePhoto = p.DirProfilePhoto
                        };
+
+            var texts = from p in db.TB_Text
+                        where p.ContentText.Contains(pesquisa.Name)
+                        select new SearchResult_Text
+                        {
+                            Name = "myText",
+                            ContentText = p.ContentText,
+                            Type = "Text"
+                        };
+
+            IEnumerable<SearchResult> post = users;
+            post = post.Concat(texts);
 
             return Json(post, JsonRequestBehavior.AllowGet);
         }

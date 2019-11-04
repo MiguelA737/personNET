@@ -34,7 +34,10 @@
 
                     for (var i = 0; i < data.length; i++) {
 
-                        resultados.append('<div class="card"><h4><b>' + data[i].Name + '</div>')
+                        if (data[i].Type == "Text")
+                            resultados.append('<div class="card"><h4>Text: <b>' + data[i].ContentText + '</div>')
+                        if (data[i].Type == "User")
+                            resultados.append('<div class="card"><h4>User: <b>' + data[i].Name + '</div>')
 
                     }
 
