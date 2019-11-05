@@ -49,23 +49,24 @@ namespace MyWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdContent,ContentText")] TB_Text tB_Text)
+        public ActionResult Create([Bind(Include = "IdContent,ContentText,Title")] TB_Text tB_Text)
         {
-            TB_Content tB_Content = new TB_Content();
-            tB_Content.IdContent = db.TB_Content.Count();
-            tB_Content.ContentType = "Text";
-            tB_Content.UploadDate = DateTime.Now;
-            tB_Content.ContentViews = 0;
-            tB_Content.IdUser = UserControl.VerifyUserStatus().IdUser;
+            TB_Content tB_Content = new TB_Content
+            {
+                IdContent = db.TB_Content.Count(),
+                ContentType = "Text",
+                UploadDate = DateTime.Now,
+                ContentViews = 0,
+                IdUser = UserControl.VerifyUserStatus().IdUser
+            };
 
             if (ModelState.IsValid)
             {
                 db.TB_Content.Add(tB_Content);
-
+                
                 tB_Text.IdContent = tB_Content.IdContent;
-
+                
                 db.TB_Text.Add(tB_Text);
-
                 db.SaveChanges();
                 return Redirect("../MainPage/Index");
             }
@@ -94,7 +95,7 @@ namespace MyWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdContent,ContentText")] TB_Text tB_Text)
+        public ActionResult Edit([Bind(Include = "IdContent,ContentText,Title")] TB_Text tB_Text)
         {
             if (ModelState.IsValid)
             {

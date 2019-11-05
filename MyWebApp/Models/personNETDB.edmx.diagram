@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e54708b9ce3240c1a45811c38f842006" Name="Diagram1">
-        <EntityTypeShape EntityType="PERSONNETModel.Assoc_Core_Content" Width="1.5" PointX="13.5" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.Content_Access_Denial" Width="1.5" PointX="13.5" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.Core_Access_Denial" Width="1.5" PointX="8.25" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.TB_AdditionalData" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.TB_Admin" Width="1.5" PointX="1.5" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.TB_Content" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.TB_Core" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.TB_Genre" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.TB_Keyword" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.TB_Notification" Width="1.5" PointX="3.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.TB_Photo" Width="1.5" PointX="10.5" PointY="11.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.TB_Text" Width="1.5" PointX="10.5" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.TB_User" Width="1.5" PointX="6" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PERSONNETModel.TB_Video" Width="1.5" PointX="10.5" PointY="15.875" IsExpanded="true" />
+      <Diagram DiagramId="3aaaa448633847bda32115103818662d" Name="Diagram1">
+        <EntityTypeShape EntityType="PERSONNETModel.Assoc_Core_Content" Width="1.5" PointX="13.5" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.Content_Access_Denial" Width="1.5" PointX="13.5" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.Core_Access_Denial" Width="1.5" PointX="8.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.TB_AdditionalData" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.TB_Admin" Width="1.5" PointX="1.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.TB_Content" Width="1.5" PointX="8.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.TB_Core" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.TB_Genre" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.TB_Keyword" Width="1.5" PointX="5.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.TB_Notification" Width="1.5" PointX="3.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.TB_Photo" Width="1.5" PointX="10.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.TB_Text" Width="1.5" PointX="10.5" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.TB_User" Width="1.5" PointX="6" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="PERSONNETModel.TB_Video" Width="1.5" PointX="10.5" PointY="16.25" IsExpanded="true" />
         <AssociationConnector Association="PERSONNETModel.FK__Assoc_Cor__IdCon__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="PERSONNETModel.FK__Assoc_Cor__IdCor__31EC6D26" ManuallyRouted="false" />
         <AssociationConnector Association="PERSONNETModel.FK__Content_A__IdCon__1FCDBCEB" ManuallyRouted="false" />

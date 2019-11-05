@@ -7,6 +7,6 @@ namespace MyWebApp.Models
 {
     public class Search
     {
-        public string Name { get; set; }
+        public string Input { get; set; }
     }
 }

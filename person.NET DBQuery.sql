@@ -1,3 +1,6 @@
+--0 (caso o DB já exista e deva ser deletado)
+DROP DATABASE PERSONNET
+
 --1
 CREATE DATABASE PERSONNET
 

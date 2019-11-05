@@ -326,21 +326,6 @@
     <Content Include="Views\TB_Notification\Details.cshtml" />
     <Content Include="Views\TB_Notification\Edit.cshtml" />
     <Content Include="Views\TB_Notification\Index.cshtml" />
-    <Content Include="Views\TB_Photo\Create.cshtml" />
-    <Content Include="Views\TB_Photo\Delete.cshtml" />
-    <Content Include="Views\TB_Photo\Details.cshtml" />
-    <Content Include="Views\TB_Photo\Edit.cshtml" />
-    <Content Include="Views\TB_Photo\Index.cshtml" />
-    <Content Include="Views\TB_Text\Create.cshtml" />
-    <Content Include="Views\TB_Text\Delete.cshtml" />
-    <Content Include="Views\TB_Text\Details.cshtml" />
-    <Content Include="Views\TB_Text\Edit.cshtml" />
-    <Content Include="Views\TB_Text\Index.cshtml" />
-    <Content Include="Views\TB_Video\Create.cshtml" />
-    <Content Include="Views\TB_Video\Delete.cshtml" />
-    <Content Include="Views\TB_Video\Details.cshtml" />
-    <Content Include="Views\TB_Video\Edit.cshtml" />
-    <Content Include="Views\TB_Video\Index.cshtml" />
     <Content Include="Views\TB_Admin\Create.cshtml" />
     <Content Include="Views\TB_Admin\Delete.cshtml" />
     <Content Include="Views\TB_Admin\Details.cshtml" />
@@ -354,6 +339,21 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\UserSignup\Create.cshtml" />
     <Content Include="Views\MainPage\Index.cshtml" />
+    <Content Include="Views\TB_Text\Create.cshtml" />
+    <Content Include="Views\TB_Text\Delete.cshtml" />
+    <Content Include="Views\TB_Text\Details.cshtml" />
+    <Content Include="Views\TB_Text\Edit.cshtml" />
+    <Content Include="Views\TB_Text\Index.cshtml" />
+    <Content Include="Views\TB_Video\Create.cshtml" />
+    <Content Include="Views\TB_Video\Delete.cshtml" />
+    <Content Include="Views\TB_Video\Details.cshtml" />
+    <Content Include="Views\TB_Video\Edit.cshtml" />
+    <Content Include="Views\TB_Video\Index.cshtml" />
+    <Content Include="Views\TB_Photo\Create.cshtml" />
+    <Content Include="Views\TB_Photo\Delete.cshtml" />
+    <Content Include="Views\TB_Photo\Details.cshtml" />
+    <Content Include="Views\TB_Photo\Edit.cshtml" />
+    <Content Include="Views\TB_Photo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

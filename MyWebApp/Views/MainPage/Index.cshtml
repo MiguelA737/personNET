@@ -19,7 +19,7 @@
             $("#pesquisar").on("click", function () {
 
                 var search = {
-                    Name: $("#name").val()
+                    Input: $("#name").val()
                 };
                 //Chama a Action Search do Controller MainPage para obter uma lista de resultados, enviando uma Search como parâmetro
                 $.getJSON("/MainPage/Search", search, function (data) {
@@ -35,9 +35,9 @@
                     for (var i = 0; i < data.length; i++) {
 
                         if (data[i].Type == "Text")
-                            resultados.append('<div class="card"><h4>Text: <b>' + data[i].ContentText + '</div>')
+                            resultados.append('<div class="card"><p>Postado em ' + data[i].UploadDate + ' por ' + data[i].User + '</p><h4>' + data[i].Title + '</h4><p>' + data[i].ContentText + '</p></div>')
                         if (data[i].Type == "User")
-                            resultados.append('<div class="card"><h4>User: <b>' + data[i].Name + '</div>')
+                            resultados.append('<div class="card"><h4>Usuário: <b>' + data[i].User + '</div>')
 
                     }
 

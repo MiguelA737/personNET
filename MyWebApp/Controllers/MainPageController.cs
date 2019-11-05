@@ -23,20 +23,22 @@ namespace MyWebApp.Controllers
         {
             //LINQ
             var users = from p in db.TB_User
-                       where p.Name.Contains(pesquisa.Name)
+                       where p.Name.Contains(pesquisa.Input)
                        select new SearchResult_User
                        {
-                           Name = p.Name,
+                           User = p.Name,
                            Type = "User",
                            DirProfilePhoto = p.DirProfilePhoto
                        };
 
             var texts = from p in db.TB_Text
-                        where p.ContentText.Contains(pesquisa.Name)
+                        where p.ContentText.Contains(pesquisa.Input) || p.Title.Contains(pesquisa.Input)
                         select new SearchResult_Text
                         {
-                            Name = "myText",
+                            Title = p.Title,
                             ContentText = p.ContentText,
+                            User = p.TB_Content.TB_User.Name,
+                            UploadDate = p.TB_Content.UploadDate.ToString(),
                             Type = "Text"
                         };
 

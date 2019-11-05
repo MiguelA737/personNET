@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="PERSONNETModelStoreContainer" CdmEntityContainer="PersonNETEntities">
+  <EntityContainerMapping StorageEntityContainer="PERSONNETModelStoreContainer" CdmEntityContainer="personNETEntities">
     <EntitySetMapping Name="Assoc_Core_Content">
       <EntityTypeMapping TypeName="PERSONNETModel.Assoc_Core_Content">
         <MappingFragment StoreEntitySet="Assoc_Core_Content">
@@ -101,6 +101,7 @@
         <MappingFragment StoreEntitySet="TB_Photo">
           <ScalarProperty Name="IdContent" ColumnName="IdContent" />
           <ScalarProperty Name="DirPhoto" ColumnName="DirPhoto" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -109,6 +110,7 @@
         <MappingFragment StoreEntitySet="TB_Text">
           <ScalarProperty Name="IdContent" ColumnName="IdContent" />
           <ScalarProperty Name="ContentText" ColumnName="ContentText" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -131,6 +133,7 @@
         <MappingFragment StoreEntitySet="TB_Video">
           <ScalarProperty Name="IdContent" ColumnName="IdContent" />
           <ScalarProperty Name="DirVideo" ColumnName="DirVideo" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

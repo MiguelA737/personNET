@@ -8,5 +8,6 @@ namespace MyWebApp.Models
     public class SearchResult_User : SearchResult
     {
         public string DirProfilePhoto { get; set; }
+        public string User { get; set; }
     }
 }

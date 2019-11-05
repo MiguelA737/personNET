@@ -104,14 +104,16 @@
       <PropertyRef Name="IdContent" />
     </Key>
     <Property Name="IdContent" Type="int" Nullable="false" />
-    <Property Name="DirPhoto" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="DirPhoto" Type="text" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="256" Nullable="false" />
   </EntityType>
   <EntityType Name="TB_Text">
     <Key>
       <PropertyRef Name="IdContent" />
     </Key>
     <Property Name="IdContent" Type="int" Nullable="false" />
-    <Property Name="ContentText" Type="varchar" MaxLength="1024" />
+    <Property Name="ContentText" Type="text" />
+    <Property Name="Title" Type="varchar" MaxLength="256" Nullable="false" />
   </EntityType>
   <EntityType Name="TB_User">
     <Key>
@@ -145,7 +147,8 @@
       <PropertyRef Name="IdContent" />
     </Key>
     <Property Name="IdContent" Type="int" Nullable="false" />
-    <Property Name="DirVideo" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="DirVideo" Type="text" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="256" Nullable="false" />
   </EntityType>
   <Association Name="FK__Assoc_Cor__IdCon__32E0915F">
     <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />

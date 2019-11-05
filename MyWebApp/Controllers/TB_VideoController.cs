@@ -48,7 +48,7 @@ namespace MyWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdContent,DirVideo")] TB_Video tB_Video)
+        public ActionResult Create([Bind(Include = "IdContent,DirVideo,Title")] TB_Video tB_Video)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace MyWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdContent,DirVideo")] TB_Video tB_Video)
+        public ActionResult Edit([Bind(Include = "IdContent,DirVideo,Title")] TB_Video tB_Video)
         {
             if (ModelState.IsValid)
             {

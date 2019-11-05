@@ -16,7 +16,8 @@ namespace MyWebApp.Models
     {
         public int IdContent { get; set; }
         public string DirVideo { get; set; }
-    
+        public string Title { get; set; }
+
         public virtual TB_Content TB_Content { get; set; }
     }
 }

@@ -109,14 +109,16 @@
             <PropertyRef Name="IdContent" />
           </Key>
           <Property Name="IdContent" Type="int" Nullable="false" />
-          <Property Name="DirPhoto" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="DirPhoto" Type="text" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="256" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_Text">
           <Key>
             <PropertyRef Name="IdContent" />
           </Key>
           <Property Name="IdContent" Type="int" Nullable="false" />
-          <Property Name="ContentText" Type="varchar" MaxLength="1024" />
+          <Property Name="ContentText" Type="text" />
+          <Property Name="Title" Type="varchar" MaxLength="256" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_User">
           <Key>
@@ -150,7 +152,8 @@
             <PropertyRef Name="IdContent" />
           </Key>
           <Property Name="IdContent" Type="int" Nullable="false" />
-          <Property Name="DirVideo" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="DirVideo" Type="text" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="256" Nullable="false" />
         </EntityType>
         <Association Name="FK__Assoc_Cor__IdCon__32E0915F">
           <End Role="TB_Content" Type="Self.TB_Content" Multiplicity="1" />
@@ -628,7 +631,8 @@
             <PropertyRef Name="IdContent" />
           </Key>
           <Property Name="IdContent" Type="Int32" Nullable="false" />
-          <Property Name="DirPhoto" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DirPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Photo__IdCont__1920BF5C" FromRole="TB_Photo" ToRole="TB_Content" />
         </EntityType>
         <EntityType Name="TB_Text">
@@ -636,7 +640,8 @@
             <PropertyRef Name="IdContent" />
           </Key>
           <Property Name="IdContent" Type="Int32" Nullable="false" />
-          <Property Name="ContentText" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="ContentText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Text__IdConte__164452B1" FromRole="TB_Text" ToRole="TB_Content" />
         </EntityType>
         <EntityType Name="TB_User">
@@ -663,7 +668,8 @@
             <PropertyRef Name="IdContent" />
           </Key>
           <Property Name="IdContent" Type="Int32" Nullable="false" />
-          <Property Name="DirVideo" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DirVideo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="TB_Content" Relationship="Self.FK__TB_Video__IdCont__1BFD2C07" FromRole="TB_Video" ToRole="TB_Content" />
         </EntityType>
         <Association Name="FK__Assoc_Cor__IdCon__32E0915F">
@@ -838,7 +844,7 @@
           <End Role="TB_Notification" Type="Self.TB_Notification" Multiplicity="*" />
           <End Role="TB_User" Type="Self.TB_User" Multiplicity="0..1" />
         </Association>
-        <EntityContainer Name="PersonNETEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="personNETEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Assoc_Core_Content" EntityType="Self.Assoc_Core_Content" />
           <EntitySet Name="Content_Access_Denial" EntityType="Self.Content_Access_Denial" />
           <EntitySet Name="Core_Access_Denial" EntityType="Self.Core_Access_Denial" />
@@ -927,7 +933,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PERSONNETModelStoreContainer" CdmEntityContainer="PersonNETEntities">
+        <EntityContainerMapping StorageEntityContainer="PERSONNETModelStoreContainer" CdmEntityContainer="personNETEntities">
           <EntitySetMapping Name="Assoc_Core_Content">
             <EntityTypeMapping TypeName="PERSONNETModel.Assoc_Core_Content">
               <MappingFragment StoreEntitySet="Assoc_Core_Content">
@@ -1028,6 +1034,7 @@
               <MappingFragment StoreEntitySet="TB_Photo">
                 <ScalarProperty Name="IdContent" ColumnName="IdContent" />
                 <ScalarProperty Name="DirPhoto" ColumnName="DirPhoto" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1036,6 +1043,7 @@
               <MappingFragment StoreEntitySet="TB_Text">
                 <ScalarProperty Name="IdContent" ColumnName="IdContent" />
                 <ScalarProperty Name="ContentText" ColumnName="ContentText" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1058,6 +1066,7 @@
               <MappingFragment StoreEntitySet="TB_Video">
                 <ScalarProperty Name="IdContent" ColumnName="IdContent" />
                 <ScalarProperty Name="DirVideo" ColumnName="DirVideo" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -48,7 +48,6 @@
         async: true,
         success: function (dados) {
             if (dados.OK) {
-                console.log("hello");
                 $(".menu").each(function () {
                     $(this).show();
                 });

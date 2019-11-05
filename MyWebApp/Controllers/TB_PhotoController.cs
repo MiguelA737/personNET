@@ -48,7 +48,7 @@ namespace MyWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdContent,DirPhoto")] TB_Photo tB_Photo)
+        public ActionResult Create([Bind(Include = "IdContent,DirPhoto,Title")] TB_Photo tB_Photo)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace MyWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdContent,DirPhoto")] TB_Photo tB_Photo)
+        public ActionResult Edit([Bind(Include = "IdContent,DirPhoto,Title")] TB_Photo tB_Photo)
         {
             if (ModelState.IsValid)
             {
