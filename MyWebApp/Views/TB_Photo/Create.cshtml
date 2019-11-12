@@ -53,17 +53,18 @@
     $(document).ready(function () {
         $("#upload").click(function () {
 
-            var fd = new FormData();
             var files = $('#file')[0].files[0];
-            fd.append('file', files);
 
             $.ajax({
                 url: '/TB_Photo/UploadPhoto',
-                data: files,
+                data: { url: URL.createObjectURL(files) },
                 type: "POST",
                 async: true,
                 success: function (response) {
                     $("#res").text(response.Mensagem);
+                },
+                error: function (response) {
+                    $("#res").text("Erro...");
                 }
             });
 

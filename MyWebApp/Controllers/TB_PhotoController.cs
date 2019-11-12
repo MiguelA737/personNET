@@ -44,9 +44,9 @@ namespace MyWebApp.Controllers
             return View();
         }
 
-        public ActionResult UploadPhoto(HttpPostedFile files)
+        public ActionResult UploadPhoto(string url)
         {
-            return Json(new { OK = true, Mensagem = files.FileName }, JsonRequestBehavior.AllowGet);
+            return Json(new { OK = true, Mensagem = System.Web.HttpRuntime.AppDomainAppPath }, JsonRequestBehavior.AllowGet);
         }
 
         // POST: TB_Photo/Create
