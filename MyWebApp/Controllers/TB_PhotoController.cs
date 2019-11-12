@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -41,6 +42,11 @@ namespace MyWebApp.Controllers
         {
             ViewBag.IdContent = new SelectList(db.TB_Content, "IdContent", "ContentType");
             return View();
+        }
+
+        public ActionResult UploadPhoto(HttpPostedFile files)
+        {
+            return Json(new { OK = true, Mensagem = files.FileName }, JsonRequestBehavior.AllowGet);
         }
 
         // POST: TB_Photo/Create
