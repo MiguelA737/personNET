@@ -1,46 +1,17 @@
-﻿<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
-@model MyWebApp.Models.TB_Photo
-
-@{
-        ViewBag.Title = "Create";
+﻿@{
+    ViewBag.Title = "Create";
 }
 
 <h2>Create</h2>
 
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "TB_Photo", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>TB_Photo</h4>
-        <hr />
+    <input type="file" name="file" value="Selecionar Arquivo" />
+    <input type="text" name="title" id="title" value="Título" />
+    <input type="submit" value="Fazer Upload" />
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DirPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <input type="file" id="file" value="Selecionar Foto" accept="image/*">
-            <input type="button" id="upload" value="Fazer Upload"/>
-            <p id="res"></p>
-            @Html.ValidationMessageFor(model => model.DirPhoto, "", new { @class = "text-danger" })
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
 }
-
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
@@ -48,26 +19,3 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-
-<script>
-    $(document).ready(function () {
-        $("#upload").click(function () {
-
-            var files = $('#file')[0].files[0];
-
-            $.ajax({
-                url: '/TB_Photo/UploadPhoto',
-                data: { url: URL.createObjectURL(files) },
-                type: "POST",
-                async: true,
-                success: function (response) {
-                    $("#res").text(response.Mensagem);
-                },
-                error: function (response) {
-                    $("#res").text("Erro...");
-                }
-            });
-
-        });
-    });
-</script>

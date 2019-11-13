@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MyWebApp.Models;
+using MyWebApp.Repositories.Authentication;
 
 namespace MyWebApp.Controllers
 {
@@ -44,27 +45,42 @@ namespace MyWebApp.Controllers
             return View();
         }
 
-        public ActionResult UploadPhoto(string url)
-        {
-            return Json(new { OK = true, Mensagem = System.Web.HttpRuntime.AppDomainAppPath }, JsonRequestBehavior.AllowGet);
-        }
-
-        // POST: TB_Photo/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdContent,DirPhoto,Title")] TB_Photo tB_Photo)
+        [ActionName("Create")]
+        public ActionResult Upload(HttpPostedFileBase file, string title)
         {
-            if (ModelState.IsValid)
+            TB_Content tB_Content = new TB_Content
             {
-                db.TB_Photo.Add(tB_Photo);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                IdContent = db.TB_Content.Count(),
+                ContentType = "Photo",
+                UploadDate = DateTime.Now,
+                ContentViews = 0,
+                IdUser = UserControl.VerifyUserStatus().IdUser
+            };
+
+            TB_Photo tB_Photo = new TB_Photo();
+            tB_Photo.Title = title;
+
+            if (file != null && file.ContentLength > 0)
+            {
+                var fileName = Path.GetFileName(file.FileName);
+                var path = Path.Combine(Server.MapPath("~/UserFiles/img/"), fileName);
+                file.SaveAs(path);
+                tB_Photo.DirPhoto = path;
             }
 
-            ViewBag.IdContent = new SelectList(db.TB_Content, "IdContent", "ContentType", tB_Photo.IdContent);
-            return View(tB_Photo);
+            if (ModelState.IsValid)
+            {
+                db.TB_Content.Add(tB_Content);
+
+                tB_Photo.IdContent = tB_Content.IdContent;
+
+                db.TB_Photo.Add(tB_Photo);
+                db.SaveChanges();
+                return Redirect("../MainPage/Index");
+            }
+
+            return Redirect("../MainPage/Index");
         }
 
         // GET: TB_Photo/Edit/5

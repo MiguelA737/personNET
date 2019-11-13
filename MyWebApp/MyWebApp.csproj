@@ -352,11 +352,11 @@
     <Content Include="Views\TB_Video\Details.cshtml" />
     <Content Include="Views\TB_Video\Edit.cshtml" />
     <Content Include="Views\TB_Video\Index.cshtml" />
-    <Content Include="Views\TB_Photo\Create.cshtml" />
     <Content Include="Views\TB_Photo\Delete.cshtml" />
     <Content Include="Views\TB_Photo\Details.cshtml" />
     <Content Include="Views\TB_Photo\Edit.cshtml" />
     <Content Include="Views\TB_Photo\Index.cshtml" />
+    <Content Include="Views\TB_Photo\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
