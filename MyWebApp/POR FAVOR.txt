@@ -1,0 +1,1 @@
+Excluir pasta UserFiles antes de commitar
