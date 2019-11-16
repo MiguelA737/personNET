@@ -63,10 +63,12 @@ namespace MyWebApp.Controllers
 
             if (file != null && file.ContentLength > 0)
             {
-                var fileName = Path.GetFileName(file.FileName);
-                var path = Path.Combine(Server.MapPath("~/UserFiles/img/"), fileName);
+                var path = Server.MapPath("~/UserFiles/" + UserControl.VerifyUserStatus().IdUser + "/img/");
+
+                if (!Directory.Exists(path)) Directory.CreateDirectory(path);
+                path = Path.Combine(path, tB_Content.IdContent.ToString() + Path.GetExtension(file.FileName));
                 file.SaveAs(path);
-                tB_Photo.DirPhoto = path;
+                tB_Photo.DirPhoto = "\\" + path.Substring(Server.MapPath("~").Length);
             }
 
             if (ModelState.IsValid)
@@ -80,7 +82,7 @@ namespace MyWebApp.Controllers
                 return Redirect("../MainPage/Index");
             }
 
-            return Redirect("../MainPage/Index");
+            return View(tB_Photo);
         }
 
         // GET: TB_Photo/Edit/5

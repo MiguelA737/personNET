@@ -7,8 +7,9 @@
 @using (Html.BeginForm("Create", "TB_Photo", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 
-    <input type="file" name="file" value="Selecionar Arquivo" />
-    <input type="text" name="title" id="title" value="Título" />
+    <input type="file" name="file" value="Selecionar Arquivo" accept="image/*"/>
+    <span>Título</span>
+    <input type="text" name="title" id="title" />
     <input type="submit" value="Fazer Upload" />
 
 }

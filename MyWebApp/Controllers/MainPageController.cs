@@ -19,31 +19,55 @@ namespace MyWebApp.Controllers
             return View();
         }
 
-        public ActionResult Search(Search pesquisa) //Verifica no DB se existem usuários cujos nomes contêm o termo pesquisado
+        public ActionResult Search(Search search) //Verifica no DB se existem usuários cujos nomes contêm o termo pesquisado
         {
             //LINQ
-            var users = from p in db.TB_User
-                       where p.Name.Contains(pesquisa.Input)
-                       select new SearchResult_User
-                       {
-                           User = p.Name,
-                           Type = "User",
-                           DirProfilePhoto = p.DirProfilePhoto
-                       };
+            var users = from s in db.TB_User
+                        where s.Name.Contains(search.Input)
+                        select new SearchResult_User
+                        {
+                            User = s.Name,
+                            DirProfilePhoto = s.DirProfilePhoto,
+                            Type = "User"
+                        };
 
-            var texts = from p in db.TB_Text
-                        where p.ContentText.Contains(pesquisa.Input) || p.Title.Contains(pesquisa.Input)
+            var texts = from s in db.TB_Text
+                        where s.ContentText.Contains(search.Input) || s.Title.Contains(search.Input)
                         select new SearchResult_Text
                         {
-                            Title = p.Title,
-                            ContentText = p.ContentText,
-                            User = p.TB_Content.TB_User.Name,
-                            UploadDate = p.TB_Content.UploadDate.ToString(),
+                            Title = s.Title,
+                            ContentText = s.ContentText,
+                            User = s.TB_Content.TB_User.Name,
+                            UploadDate = s.TB_Content.UploadDate.ToString(),
                             Type = "Text"
                         };
 
-            IEnumerable<SearchResult> post = users;
+            var photos = from s in db.TB_Photo
+                         where s.Title.Contains(search.Input)
+                         select new SearchResult_Photo
+                         {
+                             Title = s.Title,
+                             User = s.TB_Content.TB_User.Name,
+                             DirPhoto = s.DirPhoto,
+                             UploadDate = s.TB_Content.UploadDate.ToString(),
+                             Type = "Photo"
+                         };
+
+            var videos = from s in db.TB_Video
+                         where s.Title.Contains(search.Input)
+                         select new SearchResult_Video
+                         {
+                             Title = s.Title,
+                             User = s.TB_Content.TB_User.Name,
+                             DirVideo = s.DirVideo,
+                             UploadDate = s.TB_Content.UploadDate.ToString(),
+                             Type = "Video"
+                         };
+
+            IEnumerable <SearchResult> post = users;
             post = post.Concat(texts);
+            post = post.Concat(photos);
+            post = post.Concat(videos);
 
             return Json(post, JsonRequestBehavior.AllowGet);
         }

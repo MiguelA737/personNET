@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MyWebApp.Models;
+using MyWebApp.Repositories.Authentication;
 
 namespace MyWebApp.Controllers
 {
@@ -43,21 +45,43 @@ namespace MyWebApp.Controllers
             return View();
         }
 
-        // POST: TB_Video/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdContent,DirVideo,Title")] TB_Video tB_Video)
+        [ActionName("Create")]
+        public ActionResult Upload(HttpPostedFileBase file, string title)
         {
-            if (ModelState.IsValid)
+            TB_Content tB_Content = new TB_Content
             {
-                db.TB_Video.Add(tB_Video);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                IdContent = db.TB_Content.Count(),
+                ContentType = "Video",
+                UploadDate = DateTime.Now,
+                ContentViews = 0,
+                IdUser = UserControl.VerifyUserStatus().IdUser
+            };
+
+            TB_Video tB_Video = new TB_Video();
+            tB_Video.Title = title;
+
+            if (file != null && file.ContentLength > 0)
+            {
+                var path = Server.MapPath("~/UserFiles/" + UserControl.VerifyUserStatus().IdUser + "/vid/");
+
+                if (!Directory.Exists(path)) Directory.CreateDirectory(path);
+                path = Path.Combine(path, tB_Content.IdContent.ToString() + Path.GetExtension(file.FileName));
+                file.SaveAs(path);
+                tB_Video.DirVideo = "\\" + path.Substring(Server.MapPath("~").Length);
             }
 
-            ViewBag.IdContent = new SelectList(db.TB_Content, "IdContent", "ContentType", tB_Video.IdContent);
+            if (ModelState.IsValid)
+            {
+                db.TB_Content.Add(tB_Content);
+
+                tB_Video.IdContent = tB_Content.IdContent;
+
+                db.TB_Video.Add(tB_Video);
+                db.SaveChanges();
+                return Redirect("../MainPage/Index");
+            }
+
             return View(tB_Video);
         }
 

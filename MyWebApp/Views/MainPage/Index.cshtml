@@ -21,11 +21,14 @@
                 var search = {
                     Input: $("#name").val()
                 };
+
                 //Chama a Action Search do Controller MainPage para obter uma lista de resultados, enviando uma Search como parâmetro
                 $.getJSON("/MainPage/Search", search, function (data) {
 
                     var resultados = $("#resultados");
                     resultados.empty();
+
+                    console.log(data);
 
                     if (data.length == 0) {
                         resultados.append('<div class="alert alert-warning">Não há resultados.</div>');
@@ -36,6 +39,10 @@
 
                         if (data[i].Type == "Text")
                             resultados.append('<div class="card"><p>Postado em ' + data[i].UploadDate + ' por ' + data[i].User + '</p><h4>' + data[i].Title + '</h4><p>' + data[i].ContentText + '</p></div>')
+                        if (data[i].Type == "Photo")
+                            resultados.append('<div class="card"><p>Postado em ' + data[i].UploadDate + ' por ' + data[i].User + '</p><h4>' + data[i].Title + '</h4><img src=' + data[i].DirPhoto + '></div>')
+                        if (data[i].Type == "Video")
+                            resultados.append('<div class="card"><o>Postado em ' + data[i].UploadDate + ' por ' + data[i].User + '</p><h4>' + data[i].Title + '</h4><video width="640" height="480" controls><source src=' + data[i].DirVideo + '></video></div>')
                         if (data[i].Type == "User")
                             resultados.append('<div class="card"><h4>Usuário: <b>' + data[i].User + '</div>')
 
