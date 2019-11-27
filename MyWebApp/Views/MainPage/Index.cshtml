@@ -1,13 +1,13 @@
 ﻿@{
     ViewBag.Title = "person.NET";
 }
-<link rel="stylesheet" type="text/css" href="~/css/StyleSheet1.css">
-<div class="card">
-    <div id="divBusca">
-        <input id="name" type="text" placeholder="Buscar..." />
+<div class="card" style="border-color: #FFFFFF;">
+    <div id="divSearch">
+        <input id="name" type="text" placeholder="Buscar..." style="border: solid black 1px"/>
         <button id="pesquisar" class="btnBusca">Buscar</button>
     </div>
 </div>
+<hr style="border-color:black"/>
 <div class="row">
     <div id="resultados"></div>
 </div>
@@ -28,8 +28,6 @@
                     var resultados = $("#resultados");
                     resultados.empty();
 
-                    console.log(data);
-
                     if (data.length == 0) {
                         resultados.append('<div class="alert alert-warning">Não há resultados.</div>');
                         return false;
@@ -38,13 +36,13 @@
                     for (var i = 0; i < data.length; i++) {
 
                         if (data[i].Type == "Text")
-                            resultados.append('<div class="card"><p>Postado em ' + data[i].UploadDate + ' por ' + data[i].User + '</p><h4>' + data[i].Title + '</h4><p>' + data[i].ContentText + '</p></div>')
+                            resultados.append('<div class="card"><p>Postado em ' + data[i].UploadDate + ' por <a href="/TB_User/Details/' + data[i].IdUser + '">' + data[i].User + '</a></p><h4>' + data[i].Title + '</h4><p>' + data[i].ContentText + '</p></div>')
                         if (data[i].Type == "Photo")
-                            resultados.append('<div class="card"><p>Postado em ' + data[i].UploadDate + ' por ' + data[i].User + '</p><h4>' + data[i].Title + '</h4><img src=' + data[i].DirPhoto + '></div>')
+                            resultados.append('<div class="card"><p>Postado em ' + data[i].UploadDate + ' por <a href="/TB_User/Details/' + data[i].IdUser + '">' + data[i].User + '</a></p><h4>' + data[i].Title + '</h4><img src=' + data[i].DirPhoto + '></div>')
                         if (data[i].Type == "Video")
-                            resultados.append('<div class="card"><o>Postado em ' + data[i].UploadDate + ' por ' + data[i].User + '</p><h4>' + data[i].Title + '</h4><video width="640" height="480" controls><source src=' + data[i].DirVideo + '></video></div>')
+                            resultados.append('<div class="card"><p>Postado em ' + data[i].UploadDate + ' por <a href="/TB_User/Details/' + data[i].IdUser + '">' + data[i].User + '</a></p><h4>' + data[i].Title + '</h4><video width="640" height="480" controls><source src=' + data[i].DirVideo + '></video></div>')
                         if (data[i].Type == "User")
-                            resultados.append('<div class="card"><h4>Usuário: <b>' + data[i].User + '</div>')
+                            resultados.append('<div class="card"><h4>Usuário: <a href="/TB_User/Details/' + data[i].IdUser + '">' + data[i].User + '</a></div>')
 
                     }
 

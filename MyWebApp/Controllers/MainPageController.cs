@@ -28,7 +28,8 @@ namespace MyWebApp.Controllers
                         {
                             User = s.Name,
                             DirProfilePhoto = s.DirProfilePhoto,
-                            Type = "User"
+                            Type = "User",
+                            IdUser = s.IdUser
                         };
 
             var texts = from s in db.TB_Text
@@ -39,7 +40,8 @@ namespace MyWebApp.Controllers
                             ContentText = s.ContentText,
                             User = s.TB_Content.TB_User.Name,
                             UploadDate = s.TB_Content.UploadDate.ToString(),
-                            Type = "Text"
+                            Type = "Text",
+                            IdUser = s.TB_Content.IdUser
                         };
 
             var photos = from s in db.TB_Photo
@@ -50,7 +52,8 @@ namespace MyWebApp.Controllers
                              User = s.TB_Content.TB_User.Name,
                              DirPhoto = s.DirPhoto,
                              UploadDate = s.TB_Content.UploadDate.ToString(),
-                             Type = "Photo"
+                             Type = "Photo",
+                             IdUser = s.TB_Content.IdUser
                          };
 
             var videos = from s in db.TB_Video
@@ -61,7 +64,8 @@ namespace MyWebApp.Controllers
                              User = s.TB_Content.TB_User.Name,
                              DirVideo = s.DirVideo,
                              UploadDate = s.TB_Content.UploadDate.ToString(),
-                             Type = "Video"
+                             Type = "Video",
+                             IdUser = s.TB_Content.IdUser
                          };
 
             IEnumerable <SearchResult> post = users;

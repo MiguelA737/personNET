@@ -11,11 +11,18 @@ namespace MyWebApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TB_Photo
     {
+        [Display(Name = "Post")]
         public int IdContent { get; set; }
+        [Display(Name = "Foto")]
+        [Required(ErrorMessage = "A foto é obrigatória.")]
         public string DirPhoto { get; set; }
+        [Display(Name = "Título")]
+        [Required(ErrorMessage = "O título é obrigatório.")]
+        [MaxLength(256, ErrorMessage = "O título deve possuir até 256 caracteres.")]
         public string Title { get; set; }
 
         public virtual TB_Content TB_Content { get; set; }

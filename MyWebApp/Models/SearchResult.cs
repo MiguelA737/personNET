@@ -8,5 +8,6 @@ namespace MyWebApp.Models
     public class SearchResult
     {
         public string Type { get; set; }
+        public int IdUser { get; set; }
     }
 }

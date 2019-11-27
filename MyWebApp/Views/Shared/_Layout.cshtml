@@ -8,8 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="@Url.Content("~/css/StyleMain.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
     <title>Person.NET</title>
-    <link rel="stylesheet" href="@Url.Content("~/css/Principal.css")">
 </head>
 <body>
     <div class="header">
@@ -20,7 +21,14 @@
         <a class="btn-login" style="float: right; display: block;" href="/Home/Login">Entrar</a>
         <a class="btn-login" style="float: right; display: block;" href="../UserSignup/Create">Criar Conta</a>
         <a id="btn-logout" style="float: right; display: none;" href="">Sair</a>
-        <a class="menu" style="float: right; display: none;" href="../TB_Text/Create">Postar Texto</a>
+        <div class="menu">
+            <div class="menubar"></div><div class="menubar"></div><div class="menubar"></div>
+            <div class="menucontent">
+                <a class="menu menuitem" style="float: right; display: none;" href="/TB_Text/Create">Postar Texto</a>
+                <a class="menu menuitem" style="float: right; display: none;" href="/TB_Photo/Create">Postar Foto</a>
+                <a class="menu menuitem" style="float: right; display: none;" href="/TB_Video/Create">Postar Vídeo</a>
+            </div>
+        </div>
     </div>
     <div class="container body-content">
         @RenderBody()

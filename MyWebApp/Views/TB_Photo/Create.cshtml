@@ -1,8 +1,8 @@
 ﻿@{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Postar Foto";
 }
 
-<h2>Create</h2>
+<h2>Postar Foto</h2>
 
 @using (Html.BeginForm("Create", "TB_Photo", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -14,7 +14,7 @@
 
 }
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar à Página Principal", "Index", "MainPage")
 </div>
 
 @section Scripts {

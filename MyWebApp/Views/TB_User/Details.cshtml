@@ -1,13 +1,13 @@
 ﻿@model MyWebApp.Models.TB_User
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Perfil";
 }
 
-<h2>Details</h2>
+<h2>Perfil</h2>
 
 <div>
-    <h4>TB_User</h4>
+    <h4>Usuário</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -16,22 +16,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.E_mail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.E_mail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pass)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pass)
         </dd>
 
         <dt>
@@ -68,7 +52,52 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdUser }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="row">
+    <div id="resultados"></div>
+</div>
+
+@section Scripts{
+
+    <script>
+        $(function () {
+
+                var id = @ViewBag.IdUser;
+
+            console.log(id);
+
+                $.getJSON("/TB_User/UserPosts/" + id, function (data) {
+                    console.log(id);
+                    var resultados = $("#resultados");
+                    resultados.empty();
+
+                    console.log(data);
+
+                    if (data.length == 0) {
+                        resultados.append('<div class="alert alert-warning">Não há posts.</div>');
+                        return false;
+                    }
+
+                    for (var i = 0; i < data.length; i++) {
+
+                        if (data[i].Type == "Text")
+                            resultados.append('<div class="card"><p>Postado em ' + data[i].UploadDate + ' por <a href="/TB_User/Details/' + data[i].IdUser + '">' + data[i].User + '</a></p><h4>' + data[i].Title + '</h4><p>' + data[i].ContentText + '</p></div>')
+                        if (data[i].Type == "Photo")
+                            resultados.append('<div class="card"><p>Postado em ' + data[i].UploadDate + ' por <a href="/TB_User/Details/' + data[i].IdUser + '">' + data[i].User + '</a></p><h4>' + data[i].Title + '</h4><img src=' + data[i].DirPhoto + '></div>')
+                        if (data[i].Type == "Video")
+                            resultados.append('<div class="card"><p>Postado em ' + data[i].UploadDate + ' por <a href="/TB_User/Details/' + data[i].IdUser + '">' + data[i].User + '</a></p><h4>' + data[i].Title + '</h4><video width="640" height="480" controls><source src=' + data[i].DirVideo + '></video></div>')
+                        if (data[i].Type == "User")
+                            resultados.append('<div class="card"><h4>Usuário: <a href="/TB_User/Details/' + data[i].IdUser + '">' + data[i].User + '</a></div>')
+
+                    }
+
+                })
+
+            })
+
+    </script>
+
+}
+
+    <p>
+        @Html.ActionLink("Voltar à Página Principal", "Index", "MainPage")
+    </p>

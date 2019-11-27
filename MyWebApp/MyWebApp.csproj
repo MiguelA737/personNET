@@ -236,6 +236,7 @@
     <Content Include="css\Inicial.css" />
     <Content Include="css\Login.css" />
     <Content Include="css\Principal.css" />
+    <Content Include="css\StyleMain.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

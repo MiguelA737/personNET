@@ -47,7 +47,7 @@ namespace MyWebApp.Controllers
 
         [HttpPost]
         [ActionName("Create")]
-        public ActionResult Upload(HttpPostedFileBase file, string title)
+        public ActionResult Upload(HttpPostedFileBase DirVideo, string title)
         {
             TB_Content tB_Content = new TB_Content
             {
@@ -61,13 +61,13 @@ namespace MyWebApp.Controllers
             TB_Video tB_Video = new TB_Video();
             tB_Video.Title = title;
 
-            if (file != null && file.ContentLength > 0)
+            if (DirVideo != null && DirVideo.ContentLength > 0)
             {
                 var path = Server.MapPath("~/UserFiles/" + UserControl.VerifyUserStatus().IdUser + "/vid/");
 
                 if (!Directory.Exists(path)) Directory.CreateDirectory(path);
-                path = Path.Combine(path, tB_Content.IdContent.ToString() + Path.GetExtension(file.FileName));
-                file.SaveAs(path);
+                path = Path.Combine(path, tB_Content.IdContent.ToString() + Path.GetExtension(DirVideo.FileName));
+                DirVideo.SaveAs(path);
                 tB_Video.DirVideo = "\\" + path.Substring(Server.MapPath("~").Length);
             }
 

@@ -1,0 +1,134 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    text-align: center;
+    background: white;
+}
+
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #5F9EA0;
+}
+
+  /* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.btn-login, #btn-logout {
+    margin: 10px 0px 10px 0;
+    border-radius: 5px;
+}
+
+.menubar {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+.menu {
+    float: right;
+    overflow: hidden;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.menucontent {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    z-index: 1;
+}
+
+.menucontent a {
+    float: left;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.menu:hover .menucontent {
+    display: block;
+}
+
+.menucontent a:hover, .btn-login:hover, #btn-logout:hover {
+    background-color: #eee;
+    color: black;
+}
+
+input {
+    float: left;
+    background-color: white;
+    border: solid 2px white;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 1000px;
+    border-radius: 5px;
+}
+
+.btnBusca {
+    width: 70px;
+    background: rgb(2, 2, 2);
+    color: #FFFFFF;
+    text-align: center;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btnBusca:after {
+content: "";
+    background: #f1f1f1;
+    display: block;
+    padding-top: 125%;
+    padding-left: 350%;
+    margin-left: -20px;
+    margin-top: -125%;
+    opacity: 0;
+    transition: all 0.8s;
+}
+
+.btnBusca:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+#divSearch {
+    margin: 10px 0 10px 0;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border: solid black 1px;
+    border-radius: 5px;
+}

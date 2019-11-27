@@ -32,6 +32,7 @@ namespace MyWebApp.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.IdUser = tB_User.IdUser;
             return View(tB_User);
         }
 
@@ -106,6 +107,51 @@ namespace MyWebApp.Controllers
                 return HttpNotFound();
             }
             return View(tB_User);
+        }
+
+        public ActionResult UserPosts(int id)
+        {
+            var texts = from s in db.TB_Text
+                        where s.TB_Content.IdUser == id
+                        select new SearchResult_Text
+                        {
+                            Title = s.Title,
+                            ContentText = s.ContentText,
+                            User = s.TB_Content.TB_User.Name,
+                            UploadDate = s.TB_Content.UploadDate.ToString(),
+                            Type = "Text",
+                            IdUser = s.TB_Content.IdUser
+                        };
+
+            var photos = from s in db.TB_Photo
+                         where s.TB_Content.IdUser == id
+                         select new SearchResult_Photo
+                         {
+                             Title = s.Title,
+                             User = s.TB_Content.TB_User.Name,
+                             DirPhoto = s.DirPhoto,
+                             UploadDate = s.TB_Content.UploadDate.ToString(),
+                             Type = "Photo",
+                             IdUser = s.TB_Content.IdUser
+                         };
+
+            var videos = from s in db.TB_Video
+                         where s.TB_Content.IdUser == id
+                         select new SearchResult_Video
+                         {
+                             Title = s.Title,
+                             User = s.TB_Content.TB_User.Name,
+                             DirVideo = s.DirVideo,
+                             UploadDate = s.TB_Content.UploadDate.ToString(),
+                             Type = "Video",
+                             IdUser = s.TB_Content.IdUser
+                         };
+
+            IEnumerable<SearchResult> post = texts;
+            post = post.Concat(photos);
+            post = post.Concat(videos);
+
+            return Json(post, JsonRequestBehavior.AllowGet);
         }
 
         // POST: TB_User/Delete/5

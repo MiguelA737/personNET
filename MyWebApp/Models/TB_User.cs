@@ -11,7 +11,8 @@ namespace MyWebApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TB_User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,12 +27,33 @@ namespace MyWebApp.Models
         }
     
         public int IdUser { get; set; }
+
+        [Display(Name="Nome")]
+        [Required(ErrorMessage = "Seu nome é obrigatório.")]
+        [MaxLength(128, ErrorMessage = "Seu nome deve possuir até 128 caracteres.")]
         public string Name { get; set; }
+
+        [Display(Name = "E-mail")]
+        [Required(ErrorMessage = "Seu e-mail é obrigatório.")]
+        [MaxLength(128, ErrorMessage = "Seu e-mail deve possuir até 128 caracteres.")]
         public string E_mail { get; set; }
+
+        [Display(Name = "Senha")]
+        [Required(ErrorMessage = "Sua senha é obrigatória.")]
+        [MaxLength(512, ErrorMessage = "Sua senha deve possuir até 512 caracteres.")]
         public string Pass { get; set; }
+
+        [Display(Name = "Foto de Perfil")]
         public string DirProfilePhoto { get; set; }
+
+        [Display(Name = "Data de Nascimento")]
+        [Required(ErrorMessage = "Sua data de nascimento é obrigatória.")]
         public System.DateTime BirthDate { get; set; }
+
+        [Display(Name = "Último acesso em: ")]
         public Nullable<System.DateTime> LastAccess { get; set; }
+
+        [Display(Name = "Acesso Premium")]
         public bool HasPremiumAccess { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
